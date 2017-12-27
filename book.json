@@ -1,6 +1,7 @@
 {
     "plugins": ["theme-api",
-                "timeline"
+                "timeline",
+                "swagger"
                 ],
     "pluginsConfig": {
         "theme-api": {
