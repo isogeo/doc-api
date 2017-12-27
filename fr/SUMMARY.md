@@ -2,7 +2,7 @@
 
 ## Présentation générale
 
-* [My Awesome API](README.md)
+* [Introduction](README.md)
 
 ## Authentication
 
