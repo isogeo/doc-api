@@ -18,8 +18,10 @@ La plateforme Isogeo distingue 2 types d’applications :
 Toute application, dveloppée par Isogeo ou un tiers, s'authentifie à la plateforme Isogeo via  [le protocole OAuth 2.0](http://tools.ietf.org/html/rfc6749). La documentation officielle de OAuth 2.0 fait donc référence pour l’authentification Isogeo ([RFC 6749](http://tools.ietf.org/html/rfc6749)).
 
 Chaque type d’application, en fonction de ses caractéristiques peut utiliser un certain nombre de flots OAuth (ou _grants_). Les applications sont préalablement déclarées sur la plateforme Isogeo par l'équipe Isogeo  qui fournit alors les identifiants d’application :
-* _client_id_
-* et _client_secret_.
+* le _client_id_
+* et le _client_secret_.
+
+____
 
 ## Généralités
 
@@ -30,14 +32,14 @@ La récupération de ce jeton dépend du type d’application et de ses caracté
 * Javascript :  [oauth](https://www.npmjs.com/package/oauth).
 * .NET :  [Microsoft.Owin.Security.OAuth](https://www.nuget.org/packages/Microsoft.Owin.Security.OAuth).
 
-L’access tokenainsi récupéré permet d’accéder aux ressources fournies par l’API via  [un en-tête d’authentification de type Bearer](http://tools.ietf.org/html/rfc6750#section-2). Exemple :  `Authorization: Bearer mF_9.B5f-4.1JqM`.
+L’_access token_ ainsi récupéré permet d’accéder aux ressources fournies par l’API via  [un en-tête d’authentification de type Bearer](http://tools.ietf.org/html/rfc6750#section-2). Exemple :  `Authorization: Bearer mF_9.B5f-4.1JqM`.
 
-La plupart des méthodes d’authentification disponibles nécessitent le transfert des identifiants de votre application : ces identifiants sont l’équivalent d’un couple login / mot de passe et ils ne doivent doncjamaisêtre visibles par les utilisateurs de votre application \(dans le code source javascript d’une application web par exemple\). Les méthodes courantes pour l’éviter sont :
+La plupart des méthodes d’authentification disponibles nécessitent le transfert des identifiants de votre application : ces identifiants sont l’équivalent d’un couple login / mot de passe et ils ne doivent donc jamaisêtre visibles par les utilisateurs de votre application (dans le code source javascript d’une application web par exemple). Les méthodes courantes pour l’éviter sont :
 
-* l’utilisation d’un proxy \(pour les applications web, donc\).
-* modifier les caractéristiques de l’application pour éviter d’avoir à transmettre ces identifiants \(application utilisateur publique, cf. ci-dessous\).
+* l’utilisation d’un proxy (applications web).
+* modifier les caractéristiques de l’application pour éviter d’avoir à transmettre ces identifiants (application utilisateur publique).
 
-
+____
 
 ## Le refresh token
 
@@ -47,20 +49,14 @@ La documentation officielle de l’utilisation d’un _refresh token_ est dispon
 
 Pour paraphraser, le renouvellement d’un _access token_ se fait sur la route https://id.api.isogeo.com/oauth/token. Donc :
 
-* la requête est un POST vers https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token?grant_type=client_credentials)
+* la requête est un **POST** vers https://id.api.isogeo.com/oauth/token?grant_type=client_credentials
 
 * avec un contenu qui indique :
 
   * `grant_type:refresh_token`
   * `refresh_token: {token_récupéré_précédemment}`
 
-* avec [un en-tête d’authentification de typeBasic](http://tools.ietf.org/html/rfc2617#section-2), où l’on considère que le nom d’utilisateur à encoder est leclient\_idet le mot de passe à encoder est leclient\_secret\(ce qui revient à encoder en[Base 64](https://en.wikipedia.org/wiki/Base64)la chaîne{client\_id}:{client\_secret}, sans les accolades\). Exemple :  
-  Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
 
-  
-L’access token est renvoyé au format JSON. Il permet l’accès aux ressources d’Isogeo en lecture seule et est valide pendant 1 heure.
+* avec [un en-tête d’authentification de typeBasic](http://tools.ietf.org/html/rfc2617#section-2), où l’on considère que le nom d’utilisateur à encoder est le  *client_id* et le mot de passe à encoder est le *client_secret* (ce qui revient à encoder en[Base 64](https://en.wikipedia.org/wiki/Base64)la chaîne `{client_id}:{client_secret}`, sans les accolades). Exemple : `Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW`
 
-Un refresh token est également fourni.
-
-
-
+L’access token est renvoyé au format JSON. Il permet l’accès aux ressources d’Isogeo en lecture seule et est valide pendant 1 heure. Un refresh token est également fourni.
