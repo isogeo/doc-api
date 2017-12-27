@@ -10,5 +10,5 @@
 
 ## Annexes
 
-* [Swagger](appendices/swaggermd.md)
+* [Swagger](appendices/swagger.md)
 
