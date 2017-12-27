@@ -1,14 +1,21 @@
 # Summary
 
-## Overview
+## Présentation générale
 
 * [My Awesome API](README.md)
 
-## Methods
+## Routes
 
-* [Defining Methods](methods.md)
+* [Recherche](methods.md)
+
+## Authentication
+
+* [Concepts](authentication/concepts.md)
+* [Applications utilisateur](authentication/usersapps.md)
+* [Applications de groupe](authentication/groupsapps.md)
 
 ## Annexes
 
+* [Glossaire](appendices/glossary.md)
 * [Swagger](appendices/swagger.md)
 
