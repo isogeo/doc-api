@@ -1,5 +1,7 @@
 {
-    "plugins": [ "theme-api" ],
+    "plugins": ["theme-api",
+                "timeline"
+                ],
     "pluginsConfig": {
         "theme-api": {
             "languages": [
@@ -13,8 +15,8 @@
                     "name": "JavaScript"
                 },
                 {
-                    "lang": "go",
-                    "name": "Go"
+                    "lang": "cs",
+                    "name": "C# .NET"
                 }
             ]
         }

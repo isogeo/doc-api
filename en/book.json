@@ -1,0 +1,14 @@
+{
+ "language": "en",
+ "links": {
+             "sidebar": {
+                         "Isogeo website": "http://www.isogeo.com/en",
+                         "Plugin source code": "https://github.com/isogeo/isogeo-plugin-qgis",
+                         "Request an access": "http://www.isogeo.com/en/QGIS-Plugin/22",
+                         "Report an issue": "https://github.com/isogeo/isogeo-plugin-qgis/issues"
+                         }
+             }
+
+
+ 
+ }
