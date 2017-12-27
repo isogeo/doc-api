@@ -16,6 +16,12 @@
 * [Recherche](methods.md)
 * [Partages](shares.md)
 
+## Proxy
+
+* [Concept](proxy/concept.md)
+* [Appels à l'API](proxy/apirequests.md)
+* [Fichiers](proxy/files.md)
+
 ## Annexes
 
 * [Glossaire](appendices/glossary.md)
