@@ -23,10 +23,10 @@ Here is how to print a message to `stdout` using JavaScript.
 console.log('My first method');
 ```
 
-{% sample lang="go" %}
-Here is how to print a message to `stdout` using Go.
+{% sample lang="cs" %}
+Here is how to print a message to `stdout` using C#.
 
-```go
+```cs
 fmt.Println("My first method")
 ```
 
