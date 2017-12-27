@@ -1,6 +1,7 @@
-# My Awesome API
+# Isogeo API
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+* [Documentation en français](/fr/README.md)
+* English documentation
 
 
 
