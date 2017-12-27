@@ -3,6 +3,7 @@
 ## Présentation générale
 
 * [Introduction](README.md)
+* [Principes généraux](overview.md)
 
 ## Authentication
 
