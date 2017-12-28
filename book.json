@@ -5,6 +5,7 @@
                 ],
     "pluginsConfig": {
         "theme-api": {
+            "split": false,
             "languages": [
                 {
                     "lang": "py",
