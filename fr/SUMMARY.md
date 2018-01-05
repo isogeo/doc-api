@@ -27,5 +27,5 @@
 * [Glossaire](appendices/glossary.md)
 * [Notes des versions](appendices/versions.md)
 * [Swagger](appendices/swagger.md)
-* [tests](appendices/tests.md)
+* [Autres ressources](fr/appendices/others.md)
 
