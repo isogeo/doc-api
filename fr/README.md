@@ -1,3 +1,5 @@
+!["API Isogeo - Logo"](/assets/api_rest_isogeo_logo.jpg "API REST Isogeo - Logo")
+
 # API REST d'Isogeo
 
 # Documentation pour les développeurs tiers
