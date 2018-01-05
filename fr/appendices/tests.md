@@ -11,7 +11,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-<div id="content">
 <div class="clearfix">
 <div class="row">
   <div class="col-md-3 col-sm-6">
@@ -63,7 +62,6 @@
       <p><i class="fa fa-2x fa-cogs"></p>
       <p><b>Extracteur<br></b></p>
     </a>
-</div>
 </div>
 </div>
 </body>
