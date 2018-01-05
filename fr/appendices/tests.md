@@ -15,21 +15,20 @@
 		<div class="clearfix">
 		  <div class="col-md-3 col-sm-4">
 		    <a href="https://isogeo.gitbooks.io/app-plugin-qgis/content/fr/" class="btn btn-lg btn-block btn-default">
-		      <p><i class="fa fa-2x fa-calendar"></p>
-		      <img src="https://raw.githubusercontent.com/isogeo/isogeo-plugin-qgis/master/img/logo_complet_IsoQGIS.png" alt="Isogeo <3 QGIS" height="35">
+		      <p><img src="https://raw.githubusercontent.com/isogeo/isogeo-plugin-qgis/master/img/logo_complet_IsoQGIS.png" alt="Isogeo <3 QGIS" height="50"></p>
 		      <p><b>Plugin QGIS</b></p>
 		    </a>
 		  </div>
 		  <div class="col-md-3 col-sm-4">
 		    <a href="https://isogeo.gitbooks.io/app-plugin-arcmap/content/fr/" class="btn btn-lg btn-block btn-default">
-		      <p><i class="fa fa-2x fa-briefcase"></p>
+		      <p><img src="https://isogeo.gitbooks.io/app-plugin-arcmap/content/fr/assets/logo_isogeo_arcmap.png" alt="Isogeo <3 QGIS" height="50"></p>
 		      <p><b>Plugin ArcMap</b></p>
 		    </a>
 		  </div>
 		  <div class="col-md-3 col-sm-4">
 		    <a href="https://isogeo.gitbooks.io/app-widget-esri-webappbuilder/content/fr/" class="btn btn-lg btn-block btn-default">
-		      <p><i class="fa fa-2x fa-paste"></p>
-		      <p><b>Widget Web AppBuilder<br> for ArcGIS</b></p>
+		      <p><i class="fa fa-2x fa-plug"></p>
+		      <p><b>Widget Web AppBuilder<br \> for ArcGIS</b></p>
 		    </a>
 		  </div>
 		  <div class="col-md-3 col-sm-4">
@@ -65,4 +64,4 @@
 		</div>
 	<div class="container">
 </body>
-</html
+</html>
