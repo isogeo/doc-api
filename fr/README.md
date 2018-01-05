@@ -29,3 +29,4 @@ Certains applicatifs permettent de voir l’API en action :
 
 Une lettre d’information \(sans spam ni marketing ajoutés\), orientée développeurs, est mise à disposition pour suivre les évolutions, nouvelles ressources ou problèmes de l’API : [s’inscrire](http://eepurl.com/bfJYu9).
 
+{% include "appendices/tests.md" %}
