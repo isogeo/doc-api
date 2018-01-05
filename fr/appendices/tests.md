@@ -11,7 +11,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div id= "main_content" class="container">
+	<div id= "main_content">
 		<div class="clearfix">
 		  <div class="col-md-3 col-sm-6">
 		    <a href="https://isogeo.gitbooks.io/app-plugin-arcmap/content/fr/" class="btn btn-lg btn-block btn-default">
