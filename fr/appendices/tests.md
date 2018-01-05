@@ -27,7 +27,6 @@
 </div>
 <div class="col-md-3 col-sm-6">
     <a href="https://isogeo.gitbooks.io/app-widget-esri-webappbuilder/content/fr/" class="btn btn-lg btn-block btn-default">
-      <p><i class="fa fa-3x fa-plug"></p>
       <p><img src="https://www.esri.com/content/dam/esrisites/common/icons/product-logos/WebAppBuilder.png" alt="Isogeo <3 Web AppBuilder for ArcGIS" height="50"></p>
       <p><b>Widget Web AppBuilder</b></p>
     </a>
