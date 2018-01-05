@@ -21,40 +21,41 @@
   </div>
 <div class="col-md-3 col-sm-6">
     <a href="https://isogeo.gitbooks.io/app-plugin-arcmap/content/fr/" class="btn btn-lg btn-block btn-default">
-      <p><img src="https://isogeo.gitbooks.io/app-plugin-arcmap/content/fr/assets/logo_isogeo_arcmap.png" alt="Isogeo <3 QGIS" height="50"></p>
+      <p><img src="https://isogeo.gitbooks.io/app-plugin-arcmap/content/fr/assets/logo_isogeo_arcmap.png" alt="Isogeo <3 ArcGIS" height="50"></p>
       <p><b>Plugin pour ArcMap</b></p>
     </a>
 </div>
 <div class="col-md-3 col-sm-6">
     <a href="https://isogeo.gitbooks.io/app-widget-esri-webappbuilder/content/fr/" class="btn btn-lg btn-block btn-default">
-      <p><i class="fa fa-2x fa-plug"></p>
+      <p><i class="fa fa-3x fa-plug"></p>
+      <p><img src="https://www.esri.com/content/dam/esrisites/common/icons/product-logos/WebAppBuilder.png" alt="Isogeo <3 Web AppBuilder for ArcGIS" height="50"></p>
       <p><b>Widget Web AppBuilder</b></p>
-    </a>
-</div>
-<div class="col-md-3 col-sm-6">
-    <a href="https://isogeo.gitbooks.io/api/content/fr/" class="btn btn-lg btn-block btn-default">
-      <p><img src="https://www.gitbook.com/assets/images/templates/api-icon.svg" alt="Isogeo <3 QGIS" height="50"></p>
-      <p><b>API REST</b></p>
     </a>
 </div>
 </div>
 <div class="row">
 <div class="col-md-3 col-sm-6">
     <a href="https://isogeo.gitbooks.io/app-portal-pixup-admin/content/" class="btn btn-lg btn-block btn-default">
-      <p><i class="fa fa-2x fa-map"></p>
+      <p><i class="fa fa-3x fa-map"></p>
       <p><b>Portail de données</b></p>
     </a>
 </div>
 <div class="col-md-3 col-sm-6">
     <a href="https://isogeo.gitbooks.io/app-isogeo2office/content/fr/" class="btn btn-lg btn-block btn-default">
-      <p><i class="fa fa-2x fa-cloud-download"></p>
+      <p><i class="fa fa-3x fa-cloud-download"></p>
       <p><b>Isogeo to Office</b></p>
     </a>
 </div>
 <div class="col-md-3 col-sm-6">
     <a href="https://isogeo.gitbooks.io/app-extractor/content/" class="btn btn-lg btn-block btn-default">
-      <p><i class="fa fa-2x fa-cogs"></p>
+      <p><i class="fa fa-3x fa-cogs"></p>
       <p><b>Extracteur</b></p>
+    </a>
+</div>
+<div class="col-md-3 col-sm-6">
+    <a href="https://isogeo.gitbooks.io/api/content/fr/" class="btn btn-lg btn-block btn-default">
+      <p><img src="https://www.gitbook.com/assets/images/templates/api-icon.svg" alt="Isogeo <3 QGIS" height="50"></p>
+      <p><b>API REST</b></p>
     </a>
 </div>
 </div>
