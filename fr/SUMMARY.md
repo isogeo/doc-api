@@ -22,6 +22,10 @@
 * [Appels à l'API](proxy/apirequests.md)
 * [Fichiers](proxy/files.md)
 
+## Entités
+
+* [Liens](entities/links.md)
+
 ## Annexes
 
 * [Glossaire](appendices/glossary.md)
