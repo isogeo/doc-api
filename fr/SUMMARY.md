@@ -5,7 +5,7 @@
 * [Introduction](README.md)
 * [Principes généraux](overview.md)
 
-## Authentication
+## Authentification
 
 * [Concepts](authentication/concepts.md)
 * [Applications utilisateur](authentication/usersapps.md)
@@ -14,7 +14,7 @@
 ## Routes
 
 * [Recherche](methods.md)
-* [Partages](shares.md)
+* [Partages \(/shares\)](shares.md)
 
 ## Proxy
 
