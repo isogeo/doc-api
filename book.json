@@ -1,11 +1,12 @@
 {
-    "plugins": ["theme-api",
+    "plugins": ["page-toc",
+                "theme-api",
                 "timeline",
                 "swagger"
                 ],
     "pluginsConfig": {
         "theme-api": {
-            "split": false,
+            "split": true,
             "languages": [
                 {
                     "lang": "py",
