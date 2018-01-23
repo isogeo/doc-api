@@ -15,11 +15,12 @@
 
 * [Généralités](general.md)
 * [Recherche](methods.md)
+  * [Tri](methods/ordering.md)
+  * [Pagination](methods/pagination.md)
   * [Texte libre](methods/terms.md)
   * [Filtres sémantiques](methods/filtering.md)
+  * [Inclure](methods/subresources.md)
   * [Géographique](methods/geographic.md)
-  * [Tri](methods/ordering.md)
-  * [Paginer](methods/pagination.md)
   * [Ségréger](methods/segreger.md)
 * [Partages \(/shares\)](shares.md)
 
