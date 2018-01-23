@@ -13,6 +13,7 @@
 
 ## Routes
 
+* [Généralités](general.md)
 * [Recherche](methods.md)
 * [Partages \(/shares\)](shares.md)
 
