@@ -22,6 +22,11 @@
                     "name": "C# .NET"
                 }
             ]
-        }
+        },
+      "page-toc": {
+                  "position": "top",
+                  "selector": ".markdown-section h2, .markdown-section h3, .markdown-section h4"
+                  }
+
     }
 }
