@@ -12,8 +12,6 @@ Par défaut, les résultats de recherche sont triés par score de pertinence \([
 
 Si aucun terme n'est envoyé, le score de pertinence est donc le même pour tous les résultats et c'est alors la date de création de la métadonnée qui sert de valeur par défaut.
 
-**Attention :** il y a un fort risque de confusion entre les dates concernant la métadonnée et celles concernant la donnée \(ou le service ou la ressource\) décrite par sa métadonnée. Être attentif à l'underscore dans le tableau des valeurs possibles ci-dessous. Pour une information plus complète, consulter [l'annexe sur les différentes dates dans Isogeo](http://help.isogeo.com/fr/appendices/different_dates.html).
-
 ### Valeurs possibles
 
 Le tableau ci-dessous indique les valeurs acceptées pour le paramètre _ob_.
