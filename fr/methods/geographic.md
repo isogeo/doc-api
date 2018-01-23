@@ -27,9 +27,11 @@ Dans Isogeo, les métadonnées peuvent contenir une enveloppe géographique \(ma
             },
 ```
 
-L'API permet de filtrer directement les résultats selon 
+L'API permet de filtrer directement les résultats en tenant compte de cette enveloppe.
 
 ## Par emprise {#bbox}
+
+> Paramètre : **box**
 
 ### Description
 
@@ -45,6 +47,8 @@ Renvoie les ressources dont l’enveloppe possède [la relation géographique sp
 
 ## Par enveloppe {#geo}
 
+> Paramètre : **geo**
+
 ### Description
 
 Renvoie les ressources dont l’enveloppe possède [la relation géographique spécifiée](#georel) avec l’enveloppe envoyée. Si la ressource ne possède pas d’enveloppe, elle n’est pas remontée. L’enveloppe doit être décrite au format WKT.
@@ -58,6 +62,8 @@ Renvoie les ressources dont l’enveloppe possède [la relation géographique sp
 ---
 
 ## Opérateurs spatiaux {#georel}
+
+> Paramètre : **rel**
 
 ### Description
 
