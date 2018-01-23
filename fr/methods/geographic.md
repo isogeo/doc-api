@@ -1,5 +1,34 @@
 # Appliquer un filtre géographique
 
+Dans Isogeo, les métadonnées peuvent contenir une enveloppe géographique \(mais ça n'est pas systématique\). Elle est alors décrite comme un GeoJSON inclus dans le JSON renvoyé :
+
+```js
+            "envelope": {
+                "bbox": [
+                    1.53421117608959,
+                    47.4932915310182,
+                    3.12437082073202,
+                    48.3342563074165
+                ],
+                "coordinates": [
+                    [
+                        [
+                            1.53878873538249,
+                            47.8421564892245
+                        ],
+                        [
+                            1.56189864932977,
+                            47.7901519658336
+                        ],
+                        [...]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+```
+
+L'API permet de filtrer directement les résultats selon 
+
 ## Par emprise {#bbox}
 
 ### Description
@@ -18,7 +47,7 @@ Renvoie les ressources dont l’enveloppe possède [la relation géographique sp
 
 ### Description
 
-Enveloppe de recherche. Renvoie les ressources dont l’enveloppe possède [la relation géographique spécifiée](#georel) avec l’enveloppe envoyée. Si la ressource ne possède pas d’enveloppe, elle n’est pas remontée. L’enveloppe doit être décrite au format WKT.
+Renvoie les ressources dont l’enveloppe possède [la relation géographique spécifiée](#georel) avec l’enveloppe envoyée. Si la ressource ne possède pas d’enveloppe, elle n’est pas remontée. L’enveloppe doit être décrite au format WKT.
 
 ### Exemples
 
@@ -40,15 +69,14 @@ Uniquement interprété si l'un des paramètres [_box_](#box) ou [_geo_](#geo) e
 
 Les valeurs possibles sont basées sur les relations standard définies par l’OGC dans  [OGC 06-103r4](http://portal.opengeospatial.org/files/?artifact_id=25355) §6.1.15.
 
-| Valeur    | Opération appliquée |
-| :-------- | :--- |
-| contains  | les métadonnées renvoyées sont celles dont l'enveloppe **contient complètement** l’enveloppe envoyée |
-| disjoint  | les métadonnées renvoyées sont celles dont l'enveloppe **n'intersecte pas** l’enveloppe envoyée |
-| equals    | les métadonnées renvoyées sont celles dont l'enveloppe **est exactement** celle de l’enveloppe envoyée |
-| **intersects** |  les métadonnées renvoyées sont celles dont l'enveloppe **croise** l’enveloppe envoyée - VALEUR PAR DEFAUT |
-| overlaps  | les métadonnées renvoyées sont celles dont l'enveloppe **englobe** l'enveloppe envoyée |
-| within    | les métadonnées renvoyées sont celles dont l'enveloppe **est entièrement contenue** dans l’enveloppe envoyée |
-
+| Valeur | Opération appliquée |
+| :--- | :--- |
+| contains | les métadonnées renvoyées sont celles dont l'enveloppe **contient complètement** l’enveloppe envoyée |
+| disjoint | les métadonnées renvoyées sont celles dont l'enveloppe **n'intersecte pas** l’enveloppe envoyée |
+| equals | les métadonnées renvoyées sont celles dont l'enveloppe **est exactement** celle de l’enveloppe envoyée |
+| **intersects** | les métadonnées renvoyées sont celles dont l'enveloppe **croise** l’enveloppe envoyée - VALEUR PAR DEFAUT |
+| overlaps | les métadonnées renvoyées sont celles dont l'enveloppe **englobe** l'enveloppe envoyée |
+| within | les métadonnées renvoyées sont celles dont l'enveloppe **est entièrement contenue** dans l’enveloppe envoyée |
 
 En pratique, les valeurs les plus couramment utilisées sont :
 
