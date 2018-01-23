@@ -17,6 +17,10 @@
 * [Recherche](methods.md)
 * [Partages \(/shares\)](shares.md)
 
+## Ressources
+
+* [Généralités](resources/general.md)
+
 ## Proxy
 
 * [Concept](proxy/concept.md)
