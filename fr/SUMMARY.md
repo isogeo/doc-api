@@ -15,7 +15,8 @@
 
 * [Généralités](general.md)
 * [Recherche](methods.md)
-  * [Sémantique](methods/terms.md)
+  * [Texte libre](methods/terms.md)
+  * [Filtres sémantiques](methods/filtering.md)
   * [Géographique](methods/geographic.md)
   * [Tri](methods/ordering.md)
   * [Paginer](methods/pagination.md)
