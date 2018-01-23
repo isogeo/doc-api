@@ -15,6 +15,11 @@
 
 * [Généralités](general.md)
 * [Recherche](methods.md)
+  * [Sémantique](methods/terms.md)
+  * [Géographique](methods/geographic.md)
+  * [Tri](methods/ordering.md)
+  * [Paginer](methods/pagination.md)
+  * [Ségréger](methods/segreger.md)
 * [Partages \(/shares\)](shares.md)
 
 ## Ressources
