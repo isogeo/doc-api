@@ -15,6 +15,7 @@
 
 * [Généralités](general.md)
 * [Recherche](methods.md)
+  * [Langue](methods/language.md)
   * [Tri](methods/ordering.md)
   * [Pagination](methods/pagination.md)
   * [Texte libre](methods/terms.md)
