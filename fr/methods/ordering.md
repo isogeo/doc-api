@@ -6,6 +6,7 @@
 
 ### Description
 
+
 _ob_ signifie _OrderBy_ et permet de trier les résultats de la recherche selon plusieurs critères.
 
 Par défaut, les résultats de recherche sont triés par score de pertinence \([voir ici pour le mode de calcul](http://help.isogeo.com/fr/features/inventory/search.html#pertinence-)\) selon les [termes libres passés au paramètre _q_](/methods/terms.md).
