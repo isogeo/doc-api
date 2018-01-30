@@ -9,8 +9,8 @@
 
 * [Concepts](authentication/concepts.md)
 * [Applications utilisateur](authentication/usersapps.md)
-  * [Types d'applications utilisateur](authentication/usersapps/userapptypes.md)
   * [URIs de redirection](authentication/usersapps/userappuris.md)
+  * [Types d'applications utilisateur](authentication/usersapps/userapptypes.md)
 * [Applications de groupe](authentication/groupsapps.md)
 
 ## Routes
