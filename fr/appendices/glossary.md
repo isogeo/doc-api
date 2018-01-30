@@ -10,7 +10,7 @@ Protocole d'authentification qui permet d'autoriser un site web, un logiciel ou 
 
 ## _access token_
 
-L'_ac\_ccess \_token_ \(ou jeton d’accès\) permet à l'application cliente d’accéder aux ressources authentifiées. Ce _token_ a une durée de validité limitée à 1h et sa portée est limitée en lecture seule.
+L'_access token_ \(ou jeton d’accès\) permet à l'application cliente d’accéder aux ressources authentifiées. Ce _token_ a une durée de validité limitée à 1h et sa portée est limitée en lecture seule.
 
 ## _refresh token_
 
