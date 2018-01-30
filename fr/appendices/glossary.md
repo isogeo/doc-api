@@ -10,11 +10,9 @@ Protocole d'authentification qui permet d'autoriser un site web, un logiciel ou 
 
 ## _access token_
 
-L'_ac_ccess _token_ \(ou jeton d’accès\) permet à l'application cliente d’accéder aux ressources authentifiées. Ce _token_ a une durée de validité limitée à 1h et sa portée est limitée en lecture seule.
+L'_ac\_ccess \_token_ \(ou jeton d’accès\) permet à l'application cliente d’accéder aux ressources authentifiées. Ce _token_ a une durée de validité limitée à 1h et sa portée est limitée en lecture seule.
 
 ## _refresh token_
 
-Le _refresh token_ \(ou jeton de rafraîchissement\) permet à l'application cliente d’obtenir un nouveau _access token_ une fois que celui-ci a expiré. Sa durée de validité est aussi limitée mais est beaucoup plus élevée que celle du _token_ d’accès.
-
-Son utilisation permet au client d’obtenir un nouveau _token_ d’accès sans l’intervention du propriétaire de la ressource protégée.
+Le _refresh token_ \(ou jeton de rafraîchissement\) permet à l'application cliente d’obtenir un nouveau _access token_ une fois que celui-ci a expiré,  sans l’intervention du propriétaire de la ressource protégée. Sa durée de validité est aussi limitée mais est beaucoup plus élevée que celle de l'_access token_.
 
