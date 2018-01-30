@@ -15,11 +15,9 @@ Une application de groupe utilise le flot [Client Credentials Grant](http://tool
 
 ## Client Credentials Grant
 
-La documentation officielle de ce flot est disponible [dans la RFC 6749](http://tools.ietf.org/html/rfc6749#section-4.4).
+La documentation officielle de ce flot est disponible [dans la RFC 6749](http://tools.ietf.org/html/rfc6749#section-4.4). Pour paraphraser, la récupération d’un _access token_ se fait sur la route [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token). Donc :
 
-Pour paraphraser, la récupération d’un _access token_ se fait sur la route[https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token). Donc :
-
-* la requête est un POST vers[https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token?grant_type=client_credentials)
+* la requête est un POST vers [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token?grant_type=client_credentials)
 
 * avec un contenu qui indique  
   grant\_type=client\_credentials
