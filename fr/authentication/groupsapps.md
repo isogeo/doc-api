@@ -5,17 +5,17 @@
 Une application de groupe possède :
 
 * un nom
-* une paire d'identifiants client : un ID et un SECRET
+* une paire d'identifiants client
 
 Elle peut être associée à 0, n groupes de travail qui peuvent ainsi lui partager 0, n catalogues.
 
-Une application de groupe accède en lecture seule à l’ensemble des fiches contenues dans l’ensemble des catalogues qui lui sont partagés. En revanche elle n’a pas directement accès à ces catalogues : la notion même de catalogue n’a pas de sens pour une application de groupe.
+Une application de groupe accède en lecture seule à l’ensemble des fiches contenues dans l’ensemble des catalogues qui lui sont partagés. En revanche elle n’a pas directement accès à ces catalogues.
 
-Une application de groupe utilise le flot [Client Credentials Grant](http://tools.ietf.org/html/rfc6749#section-4.4) pour s’authentifier à la plateforme Isogeo.
+Une application de groupe utilise le flot [_Client Credentials Grant_](#client-credentials-grant) pour s’authentifier à la plateforme Isogeo.
 
 ## Client Credentials Grant
 
-La documentation officielle de ce flot est disponible [dans la RFC 6749](http://tools.ietf.org/html/rfc6749#section-4.4). Pour paraphraser, la récupération d’un _access token_ se fait sur la route [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token). Donc :
+La documentation officielle de ce flot est disponible dans [la RFC 6749](https://tools.ietf.org/html/rfc6749#section-4.4). Pour paraphraser, la récupération d’un _access token_ se fait sur la route [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token). Donc :
 
 * la requête est un POST vers [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token?grant_type=client_credentials)
 
