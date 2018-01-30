@@ -2,7 +2,7 @@
 
 Les flots d’authentification disponibles nécessitent l’utilisation d’un navigateur \(potentiellement embarqué pour une application de bureau\) et se basent sur un principe de redirections \([HTTP 302](https://en.wikipedia.org/wiki/HTTP_302)\) pour fournir un code d’autorisation à l’application. Dans un souci de sécurité il est donc nécessaire d’enregistrer préalablement la ou les URIs de redirection qui correspondent au\(x\) domaine\(s\) de votre application. Les URIs enregistrées doivent correspondre exactement aux routes acceptées par votre application.
 
-Dans le cas d’un développement étalé sur plusieurs plateformes \(par exemple développement, intégration, pré production, production\), il est conseillé d’enregistrer les URLs spécifiques de chaque plateforme \(dans la même application\).
+Dans le cas d’un développement étalé sur plusieurs plateformes \(par exemple développement, intégration, pré production, production\), il est conseillé d’enregistrer les URLs spécifiques de chaque plateforme dans la même application.
 
 Dans le cas d’une application native \(application de bureau, ou mobile par exemple\) ce mécanisme de redirections nécessite l’appel à un navigateur externe \(Internet Explorer, Firefox, Chrome…\) ou à un navigateur embarqué. La récupération du code d’autorisation peut alors se faire :
 
@@ -16,9 +16,9 @@ Dans le cas d’une application native \(application de bureau, ou mobile par ex
 
 Les URIs prédéfinies \(qui doivent quand même être enregistrées application par application\) sont :
 
-* urn:ietf:wg:oauth:2.0:oob: affiche une page qui permet à l’utilisateur de copier/coller le code d’autorisation depuis le navigateur vers l’application.
+* `urn:ietf:wg:oauth:2.0:oob:` affiche une page qui permet à l’utilisateur de copier/coller le code d’autorisation depuis le navigateur vers l’application.
 
-* urn:ietf:wg:oauth:2.0:oob:auto: renseigne le code d’autorisation dans le titre de la page, ce qui permet à une application intelligente de le récupérer automatiquement avant de fermer \(automatiquement si possible\) la fenêtre du navigateur.
+* `urn:ietf:wg:oauth:2.0:oob:auto:` renseigne le code d’autorisation dans le titre de la page, ce qui permet à une application intelligente de le récupérer automatiquement avant de fermer \(automatiquement si possible\) la fenêtre du navigateur.
 
 Ce système est identique à celui utilisé par Google.
 
