@@ -1,9 +1,7 @@
 # Summary
 
-## Overview
+* [Documentation en français](/fr/README.md)
+* English documentation
 
-* [My Awesome API](README.md)
 
-## Methods
 
-* [Defining Methods](methods.md)

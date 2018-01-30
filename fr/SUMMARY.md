@@ -9,6 +9,8 @@
 
 * [Concepts](authentication/concepts.md)
 * [Applications utilisateur](authentication/usersapps.md)
+  * [Types d'applications utilisateur](authentication/usersapps/userapptypes.md)
+  * [URIs de redirection](authentication/usersapps/userappuris.md)
 * [Applications de groupe](authentication/groupsapps.md)
 
 ## Routes
@@ -45,4 +47,6 @@
 * [Notes des versions](appendices/versions.md)
 * [Swagger](appendices/swagger.md)
 * [Autres ressources](fr/appendices/others.md)
+
+
 
