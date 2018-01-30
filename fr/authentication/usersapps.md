@@ -37,7 +37,7 @@ Ce système est identique à celui utilisé par Google.
 
 ---
 
-#### Types d'application utilisateur  {#userapp-types}
+## Types d'application utilisateur
 
 Une application utilisateur peut être de 2 types :
 
@@ -61,8 +61,4 @@ Le niveau de confidentialité à affecter à une application utilisateur native 
 Pour plus d’informations il est possible de se référer à la RFC en cours de rédaction sur la sécurisation des applications natives : [OAuth 2.0 for Native Apps](https://tools.ietf.org/html/draft-ietf-oauth-native-apps-03).
 
 .
-
-
-
-
 
