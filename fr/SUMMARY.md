@@ -41,6 +41,7 @@
 ## Entités
 
 * [Liens](entities/links.md)
+* [Contacts](entities/contacts.md)
 
 ## Annexes
 

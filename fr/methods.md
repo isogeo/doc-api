@@ -1,15 +1,8 @@
 # Rechercher avec l'API Isogeo
 
-## Paramètres de recherche
+## 
+
+##  {#lang}
 
 
-
-q=
-
-## Langue \(_lang_\) {#lang}
-
-## Filtr géographique {#lang}
-
-
-## Filtres contextuels
 
