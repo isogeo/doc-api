@@ -4,9 +4,9 @@
 
 ### Description
 
-Les applications tierces d'Isogeo accèdent aux catalogues de métadonnées que les administrateurs choisissent de leur partager.
+Les applications tierces d'Isogeo accèdent aux catalogues de métadonnées que les administrateurs choisissent de leur partager via le menu "Partages" de l'interface d'administration ([voir documentation fonctionnelle](http://help.isogeo.com/fr/features/admin/shares.html)).
 
-Les applications de groupe
+
 
 
 ### Valeurs possibles
