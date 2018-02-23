@@ -1,4 +1,4 @@
-# Ségrégation de résultats par partage
+# Ségrégation de résultats par partage {#search_filter_share}
 
 > Paramètre : s
 
