@@ -1,6 +1,8 @@
 # Appliquer un filtre géographique
 
-Dans Isogeo, les métadonnées peuvent contenir une enveloppe géographique \(mais ça n'est pas systématique\). Elle est alors décrite comme un GeoJSON inclus dans le JSON renvoyé :
+Dans Isogeo, les métadonnées peuvent contenir une enveloppe géographique \(mais ça n'est pas systématique\). 
+
+Elle est alors décrite comme un GeoJSON inclus dans le JSON renvoyé :
 
 ```js
             "envelope": {
