@@ -31,6 +31,8 @@
 ## Ressources
 
 * [Généralités](resources/general.md)
+* [Sous-ressources](resources/sous-entites.md)
+  * [Contacts](resources/sous-entites/contacts.md)
 
 ## Proxy
 

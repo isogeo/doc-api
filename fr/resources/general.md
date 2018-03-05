@@ -8,7 +8,7 @@ Ressource =
 
 ## Entités et sous-entités
 
-### Sous-entités {#docs-internal-guid-cd173224-234f-84e0-eade-0822269a90ed}
+### Sous-entités
 
 Certaines entités possèdent beaucoup d’informations, regroupées dans des sous-entités. Afin d’optimiser l’usage de notre plateforme, l’API ne renvoie par défaut qu’une partie de ces sous-entités. Afin d’accéder à plus d’informations :
 
