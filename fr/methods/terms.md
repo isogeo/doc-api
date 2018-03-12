@@ -24,7 +24,7 @@ Caractéristiques :
 
 Dans Isogeo, chaque métadonnée indique le type de ressource qu'elle décrit. De cette relation 1:1 découle un filtre sur le type de ressources décrites.
 
-> Structure : q=**type:{WORKGROUP_ID}**
+> Structure : q=**type:{TYPE_CODE_VALUE}**
 
 Caractéristiques :
 * valeur obigatoire
@@ -43,13 +43,40 @@ Caractéristiques :
 
 Les différents types sont expliqués dans [le guide utilisateur](http://help.isogeo.com/fr/features/documentation/#les-diff%C3%A9rents-types-de-ressources).
 
-### Exemples
+#### Exemples
 
 ```js
 /resources/search?q=route type:dataset  # jeux de données contenant le mot 'routes'
 ```
 
 ---
+
+### Actions liées
+ 
+Une métadonnée peut contenir des liens (_links_) que l'utilisateur qualifie selon leur action finale.
+
+> Structure : q=**action:{ACTION_CODE_VALUE}**
+
+Caractéristiques :
+* champ optionnel
+* les liens sont visibles dans la sous-ressource _links_
+* plusieurs valeurs possibles
+
+
+#### Valeurs possibles
+
+| Valeur   | Description                          |
+| :------- | :----------------------------------- |
+| download | Lien de téléchargement               |
+| other    | Autre type de lien (site externe...) |
+| view     | Lien de visualisation                |
+
+#### Exemples
+
+```js
+/resources/search?q=type:dataset action:download   # jeux de données ayant au moins un lien de téléchargement
+/resources/search?q=has-no:action  # toute ressource sans aucune action
+```
 
 
 
