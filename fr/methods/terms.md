@@ -18,6 +18,7 @@ Caractéristiques :
 * à la racine du modèle
 * 1 seule occurrence possible
 
+---
 
 ### Type de ressource {#type}
 
@@ -41,6 +42,16 @@ Caractéristiques :
 | resource       | Ressource non géographique                |
 
 Les différents types sont expliqués dans [le guide utilisateur](http://help.isogeo.com/fr/features/documentation/#les-diff%C3%A9rents-types-de-ressources).
+
+### Exemples
+
+```js
+/resources/search?q=route type:dataset  # jeux de données contenant le mot 'routes'
+```
+
+---
+
+
 
 
 
