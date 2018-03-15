@@ -8,7 +8,7 @@ Il est possible de limiter la recherche à une liste de métadonnées en particu
 
 ### Description
 
-Limites la rechercher à la liste des identifiants de métadonnées spécifiés.
+Limite la recherche à la liste des identifiants de métadonnées spécifiés. Associé à une recherche sans paramètres c’est un moyen de pouvoir récupérer plusieurs ressources en 1 seule requête.
 
 ### Valeurs possibles
 
