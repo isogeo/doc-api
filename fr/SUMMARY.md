@@ -24,8 +24,9 @@
   * [Texte libre](methods/terms.md)
   * [Filtres sémantiques](methods/filtering.md)
   * [Inclure](methods/subresources.md)
+  * [Liste d'identifiants](methods/idslist.md)
   * [Géographique](methods/geographic.md)
-  * [Ségréger](methods/segreger.md)
+  * [Ségréger par partage source](methods/segreger.md)
 * [Partages \(/shares\)](shares.md)
 
 ## Ressources
