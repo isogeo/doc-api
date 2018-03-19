@@ -20,10 +20,10 @@ La documentation officielle de ce flot est disponible dans [la RFC 6749](https:/
 * la requête est un POST vers [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token?grant_type=client_credentials)
 
 * avec un contenu qui indique  
-  grant\_type=client\_credentials
+  `grant\_type=client\_credentials`
 
 * avec [un en-tête d’authentification de typeBasic](http://tools.ietf.org/html/rfc2617#section-2), où l’on considère que le nom d’utilisateur à encoder est leclient\_idet le mot de passe à encoder est leclient\_secret\(ce qui revient à encoder en[Base 64](https://en.wikipedia.org/wiki/Base64)la chaîne{client\_id}:{client\_secret}, sans les accolades\). Exemple :  
-  Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
+  `Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW`
 
 L’_access token_ est renvoyé au format JSON. Il permet l’accès aux ressources d’Isogeo en lecture seule et est valide pendant 1 heure. Un _refresh token_ est également fourni.
 
@@ -37,7 +37,7 @@ Pour paraphraser, le renouvellement d’unaccess tokense fait sur la route[https
 
 * avec un contenu qui indique :
 
-  * grant\_type:refresh\_token
+  * `grant\_type:refresh\_token`
 
   * refresh\_token: le refresh token précédemment récupéré
 
