@@ -95,3 +95,24 @@ Caractéristiques :
 
 ---
 
+### Formats source {#format}
+ 
+Une métadonnée peut contenir 0 - n mots-clés définis par l'utilisateur lors de l'étiquetage (édition).
+
+> Structure : q=**keyword:isogeo:{KEYWORD_CODE_VALUE}**
+
+Caractéristiques :
+* champ optionnel
+* les keywords sont visibles dans la sous-ressource _keywords_
+* plusieurs valeurs possibles
+
+#### Exemples
+
+```js
+/resources/search?q=format:shp   # métadonnées dont le format est Esri Shapefiles
+/resources/search?q=has-no:keyword  # toute ressource sans aucun mot-clé
+```
+
+---
+
+
