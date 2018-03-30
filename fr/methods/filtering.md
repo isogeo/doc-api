@@ -1,5 +1,7 @@
 # Filtres sémantiques {#search_filters}
 
+> Paramètre : **q**
+
 ### Groupe de travail {#owner}
 
 Dans Isogeo, chaque métadonnée appartient au groupe de travail (workgroup) dans lequel elle a été créée. De cette relation 1:1 découle un filtre sur le groupe de travail propriétaire des métadonnées.
@@ -44,7 +46,7 @@ Les différents types sont expliqués dans [le guide utilisateur](http://help.is
 
 ---
 
-### Actions liées
+### Actions liées {#action}
  
 Une métadonnée peut contenir des liens (_links_) que l'utilisateur qualifie selon leur action finale.
 
@@ -84,20 +86,11 @@ Caractéristiques :
 * les keywords sont visibles dans la sous-ressource _keywords_
 * plusieurs valeurs possibles
 
-
-#### Valeurs possibles
-
-| Valeur   | Description                          |
-| :------- | :----------------------------------- |
-| download | Lien de téléchargement               |
-| other    | Autre type de lien (site externe...) |
-| view     | Lien de visualisation                |
-
 #### Exemples
 
 ```js
-/resources/search?q=type:dataset action:download   # jeux de données ayant au moins un lien de téléchargement
-/resources/search?q=has-no:action  # toute ressource sans aucune action
+/resources/search?q=type:dataset keyword:isogeo:2014   # jeux de données ayant le mot-clé '2014'
+/resources/search?q=has-no:keyword  # toute ressource sans aucun mot-clé
 ```
 
 ---
