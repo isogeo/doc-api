@@ -2,7 +2,7 @@
 
 Les applications tierces utilisant le flot d'authentification oAuth2 de type _Client Credentials Grant_, accèdent au _scope_ **resources:read**. Les routes accessibles par ce scope sont détaillées ci-après.
 
-> les valeurs entre **{}** sont des identifiants à remplacer
+> les valeurs entre **{}** sont des identifiants à remplacer (crochets inclus) lors des requêtes
 
 | Route                  | Description                  |
 | :--------------------- | :--------------------------- |
