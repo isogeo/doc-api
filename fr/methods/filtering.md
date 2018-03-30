@@ -71,9 +71,34 @@ Caractéristiques :
 /resources/search?q=has-no:action  # toute ressource sans aucune action
 ```
 
+---
+
+### Mots-clés {#keyword}
+ 
+Une métadonnée peut contenir 0 - n mots-clés définis par l'utilisateur lors de l'étiquetage (édition).
+
+> Structure : q=**keyword:isogeo:{KEYWORD_CODE_VALUE}**
+
+Caractéristiques :
+* champ optionnel
+* les keywords sont visibles dans la sous-ressource _keywords_
+* plusieurs valeurs possibles
 
 
+#### Valeurs possibles
 
+| Valeur   | Description                          |
+| :------- | :----------------------------------- |
+| download | Lien de téléchargement               |
+| other    | Autre type de lien (site externe...) |
+| view     | Lien de visualisation                |
 
+#### Exemples
 
+```js
+/resources/search?q=type:dataset action:download   # jeux de données ayant au moins un lien de téléchargement
+/resources/search?q=has-no:action  # toute ressource sans aucune action
+```
+
+---
 
