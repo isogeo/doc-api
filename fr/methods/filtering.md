@@ -1,8 +1,10 @@
 # Filtres sémantiques {#search_filters}
 
+Au-delà des termes de recherche libre, le moteur de recherche permet de filter selon un certain nombre de _tags_, contextualisés et systématiquement retournés par l'API.
+
 > Paramètre : **q**
 
-### Groupe de travail {#owner}
+## Groupe de travail {#owner}
 
 Dans Isogeo, chaque métadonnée appartient au groupe de travail (workgroup) dans lequel elle a été créée. De cette relation 1:1 découle un filtre sur le groupe de travail propriétaire des métadonnées.
 
@@ -15,7 +17,7 @@ Caractéristiques :
 
 ---
 
-### Type de ressource {#type}
+## Type de ressource {#type}
 
 Dans Isogeo, chaque métadonnée indique le type de ressource qu'elle décrit. De cette relation 1:1 découle un filtre sur le type de ressources décrites.
 
@@ -26,7 +28,7 @@ Caractéristiques :
 * à la racine du modèle
 * 1 seule occurence possible
 
-#### Valeurs possibles
+### Valeurs possibles
 
 | Valeur         | Ressource décrite                         |
 | :------------- | :---------------------------------------- |
@@ -38,7 +40,7 @@ Caractéristiques :
 
 Les différents types sont expliqués dans [le guide utilisateur](http://help.isogeo.com/fr/features/documentation/#les-diff%C3%A9rents-types-de-ressources).
 
-#### Exemples
+### Exemples
 
 ```js
 /resources/search?q=route type:dataset  # jeux de données contenant le mot 'routes'
@@ -46,7 +48,7 @@ Les différents types sont expliqués dans [le guide utilisateur](http://help.is
 
 ---
 
-### Actions liées {#action}
+## Actions liées {#action}
  
 Une métadonnée peut contenir des liens (_links_) que l'utilisateur qualifie selon leur action finale.
 
@@ -58,7 +60,7 @@ Caractéristiques :
 * plusieurs valeurs possibles
 
 
-#### Valeurs possibles
+### Valeurs possibles
 
 | Valeur   | Description                          |
 | :------- | :----------------------------------- |
@@ -66,7 +68,7 @@ Caractéristiques :
 | other    | Autre type de lien (site externe...) |
 | view     | Lien de visualisation                |
 
-#### Exemples
+### Exemples
 
 ```js
 /resources/search?q=type:dataset action:download   # jeux de données ayant au moins un lien de téléchargement
@@ -75,7 +77,7 @@ Caractéristiques :
 
 ---
 
-### Mots-clés {#keyword}
+## Mots-clés {#keyword}
  
 Une métadonnée peut contenir 0 - n mots-clés définis par l'utilisateur lors de l'étiquetage (édition).
 
@@ -86,7 +88,7 @@ Caractéristiques :
 * les keywords sont visibles dans la sous-ressource _keywords_
 * plusieurs valeurs possibles
 
-#### Exemples
+### Exemples
 
 ```js
 /resources/search?q=type:dataset keyword:isogeo:2014   # jeux de données ayant le mot-clé '2014'
@@ -95,7 +97,7 @@ Caractéristiques :
 
 ---
 
-### Formats source {#format}
+## Formats source {#format}
  
 Une métadonnée peut contenir le format source du jeu de données décrit. Ce format peut être renseigné par le Scan FME ou manuellement.
 
@@ -106,7 +108,7 @@ Caractéristiques :
 * les formats  sont visibles dans la sous-ressource _keywords_
 * une seule valeur possible
 
-#### Exemples
+### Exemples
 
 ```js
 /resources/search?q=format:shp   # métadonnées dont le format est Esri Shapefiles
@@ -115,25 +117,27 @@ Caractéristiques :
 
 ---
 
-### Fournisseur {#provider}
+## Fournisseur {#provider}
  
-Une métadonnée peut contenir 0 - n mots-clés définis par l'utilisateur lors de l'étiquetage (édition).
+Une métadonnée peut être créée via Isogeo ou via un outil externe (typiquement GeoNetwork) qui est moissonné par le client CSW. Pour les distinguer on peut se référer à l'identifiant universel mais il est possible de filtrer dessus.
 
-> Structure : q=**provider:manual**
+> Structure : q=**provider:{VALUE}**
+
+### Valeurs possibles
+
+| Valeur   | Description                                |
+| :------- | :----------------------------------------- |
+| auto     | Métadonnée externe créée par le client CSW |
+| manual   | Métadonnée Isogeo                          |
 
 Caractéristiques :
 * champ optionnel
-* les keywords sont visibles dans la sous-ressource _keywords_
-* plusieurs valeurs possibles
 
-#### Exemples
+### Exemples
 
 ```js
-/resources/search?q=format:shp   # métadonnées dont le format est Esri Shapefiles
-/resources/search?q=has-no:keyword  # toute ressource sans aucun mot-clé
+/resources/search?q=provider:auto
+/resources/search?q=provider:manual
 ```
 
 ---
-
-
-
