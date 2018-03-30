@@ -13,6 +13,7 @@
   * [Applications "confidentielles"](authentication/usersapps/userappconfidential.md)
   * [Applications "publiques"](authentication/usersapps/userapppublic.md)
 * [Applications de groupe](authentication/groupsapps.md)
+  * [Routes accessibles](authentication/groupsapps/groupsappsrights.md)
 
 ## Routes
 
