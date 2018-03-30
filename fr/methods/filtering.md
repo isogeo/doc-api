@@ -97,9 +97,29 @@ Caractéristiques :
 
 ### Formats source {#format}
  
+Une métadonnée peut contenir le format source du jeu de données décrit. Ce format peut être renseigné par le Scan FME ou manuellement.
+
+> Structure : q=**format:{FORMAT_CODE_VALUE}**
+
+Caractéristiques :
+* champ optionnel
+* les formats  sont visibles dans la sous-ressource _keywords_
+* une seule valeur possible
+
+#### Exemples
+
+```js
+/resources/search?q=format:shp   # métadonnées dont le format est Esri Shapefiles
+/resources/search?q=has-no:format  # toute ressource dont le format n'est pas décrit
+```
+
+---
+
+### Fournisseur {#provider}
+ 
 Une métadonnée peut contenir 0 - n mots-clés définis par l'utilisateur lors de l'étiquetage (édition).
 
-> Structure : q=**keyword:isogeo:{KEYWORD_CODE_VALUE}**
+> Structure : q=**provider:manual**
 
 Caractéristiques :
 * champ optionnel
@@ -114,5 +134,6 @@ Caractéristiques :
 ```
 
 ---
+
 
 
