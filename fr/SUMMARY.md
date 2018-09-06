@@ -30,6 +30,7 @@
   * [Ségréger par partage source](methods/segreger.md)
 * [Partages \(/shares\)](shares.md)
 * [download](download.md)
+  * [metadata](download/metadata.md)
 
 ## Ressources
 
