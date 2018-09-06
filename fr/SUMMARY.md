@@ -29,6 +29,7 @@
   * [Géographique](methods/geographic.md)
   * [Ségréger par partage source](methods/segreger.md)
 * [Partages \(/shares\)](shares.md)
+* [download](download.md)
 
 ## Ressources
 
