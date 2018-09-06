@@ -7,3 +7,11 @@ Dans Isogeo, toute métadonnée est en permanence accessible dans 2 versions :
 
 ## Télécharger une métadonnée XML ISO 19139
 
+> Route : GET /resources/{:rid}.xml
+
+
+Pour accéder à la version XML, il faut utiliser la route du dtéil d'une métadonnée et ajouter l'extension `.xml` en queue d'URL.
+
+
+
+**Autres ressources  :** le téléchargement de la métadonnée en XML ISO 19139 est implémentée dans le package Python. [Consulter la documentation](file:///C:/Users/julien.moura/Documents/GitHub/Isogeo/isogeo-api-py-minsdk/docs/_build/html/usage.html#download-metadata-as-xml-iso-19139).
