@@ -1,9 +1,15 @@
 {
-    "plugins": ["page-toc",
-                "timeline",
-                "swagger"
-                ],
+    "plugins": [
+        "ga",
+        "image-captions",
+        "page-toc",
+        "timeline",
+        "swagger"
+    ],
     "pluginsConfig": {
+        "ga": {
+            "token": "UA-22345848-2"
+        },
         "theme-api": {
             "split": true,
             "languages": [
@@ -22,10 +28,12 @@
                 }
             ]
         },
-      "page-toc": {
-                  "position": "top",
-                  "selector": ".markdown-section h2, .markdown-section h3, .markdown-section h4"
-                  }
-
+        "page-toc": {
+            "position": "top",
+            "selector": ".markdown-section h2, .markdown-section h3, .markdown-section h4"
+        }
+    },
+    "variables": {
+        "pictures": []
     }
 }
