@@ -14,15 +14,15 @@ Par défaut, l'information du système de coordonnées du jeu de données source
     [...],
     "coordinate-system:4326": "WGS 84",
     [...],
-},
+    },
 ```
 
 ### Détaillé {#included}
 
 ```json
-      "coordinate-system": {
-        "_tag": "coordinate-system:4326",
-        "code": 4326,
-        "name": "WGS 84"
-      },
+"coordinate-system": {
+    "_tag": "coordinate-system:4326",
+    "code": 4326,
+    "name": "WGS 84"
+    },
 ```
