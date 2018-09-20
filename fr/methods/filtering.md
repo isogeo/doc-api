@@ -4,48 +4,6 @@ Au-delà des termes de recherche libre, le moteur de recherche permet de filter 
 
 > Paramètre : **q**
 
-## Groupe de travail {#owner}
-
-Dans Isogeo, chaque métadonnée appartient au groupe de travail (workgroup) dans lequel elle a été créée. De cette relation 1:1 découle un filtre sur le groupe de travail propriétaire des métadonnées.
-
-> Structure : q=**owner:{WORKGROUP_ID}**
-
-Caractéristiques :
-* valeur obigatoire
-* à la racine du modèle
-* 1 seule occurrence possible
-
----
-
-## Type de ressource {#type}
-
-Dans Isogeo, chaque métadonnée indique le type de ressource qu'elle décrit. De cette relation 1:1 découle un filtre sur le type de ressources décrites.
-
-> Structure : q=**type:{TYPE_CODE_VALUE}**
-
-Caractéristiques :
-* valeur obigatoire
-* à la racine du modèle
-* 1 seule occurence possible
-
-### Valeurs possibles
-
-| Valeur         | Ressource décrite                         |
-| :------------- | :---------------------------------------- |
-| dataset        | Jeu de données (vecteur OU raster)        |
-| raster-dataset | Jeu de données **raster**                 |
-| vector-dataset | Jeu de données vectorielles (**vecteur**) |
-| service        | Service géographique                      |
-| resource       | Ressource non géographique                |
-
-Les différents types sont expliqués dans [le guide utilisateur](http://help.isogeo.com/fr/features/documentation/#les-diff%C3%A9rents-types-de-ressources).
-
-### Exemples
-
-```js
-/resources/search?q=route type:dataset  # jeux de données contenant le mot 'routes'
-```
-
 ---
 
 ## Actions liées {#action}
@@ -97,6 +55,50 @@ Caractéristiques :
 
 ---
 
+## Groupe de travail {#owner}
+
+Dans Isogeo, chaque métadonnée appartient au groupe de travail (workgroup) dans lequel elle a été créée. De cette relation 1:1 découle un filtre sur le groupe de travail propriétaire des métadonnées.
+
+> Structure : q=**owner:{WORKGROUP_ID}**
+
+Caractéristiques :
+* valeur obigatoire
+* à la racine du modèle
+* 1 seule occurrence possible
+
+---
+
+## Type de ressource {#type}
+
+Dans Isogeo, chaque métadonnée indique le type de ressource qu'elle décrit. De cette relation 1:1 découle un filtre sur le type de ressources décrites.
+
+> Structure : q=**type:{TYPE_CODE_VALUE}**
+
+Caractéristiques :
+* valeur obigatoire
+* à la racine du modèle
+* 1 seule occurence possible
+
+### Valeurs possibles
+
+| Valeur         | Ressource décrite                         |
+| :------------- | :---------------------------------------- |
+| dataset        | Jeu de données (vecteur OU raster)        |
+| raster-dataset | Jeu de données **raster**                 |
+| vector-dataset | Jeu de données vectorielles (**vecteur**) |
+| service        | Service géographique                      |
+| resource       | Ressource non géographique                |
+
+Les différents types sont expliqués dans [le guide utilisateur](http://help.isogeo.com/fr/features/documentation/#les-diff%C3%A9rents-types-de-ressources).
+
+### Exemples
+
+```js
+/resources/search?q=route type:dataset  # jeux de données contenant le mot 'routes'
+```
+
+---
+
 ## Formats source {#format}
  
 Une métadonnée peut contenir le format source du jeu de données décrit. Ce format peut être renseigné par le Scan FME ou manuellement.
@@ -131,6 +133,7 @@ Une métadonnée peut être créée via Isogeo ou via un outil externe (typiquem
 | manual   | Métadonnée Isogeo                          |
 
 Caractéristiques :
+
 * champ optionnel
 
 ### Exemples
@@ -138,6 +141,28 @@ Caractéristiques :
 ```js
 /resources/search?q=provider:auto
 /resources/search?q=provider:manual
+```
+
+---
+
+## Système de coordonnées source {#srs}
+ 
+Une métadonnée peut contenir le système de coordonnées source du jeu de données décrit. Ce système de coordonnées peut être renseigné par le Scan FME ou manuellement.
+La valeur du filtre est le code EPSG du système demandé.
+
+> Structure : q=**coordinate-system:{EPSG_CODE}**
+
+Caractéristiques :
+
+* champ optionnel
+* les systèmes de coordonnées  sont visibles dans la sous-ressource _coordinate-system_
+* une seule valeur possible
+
+### Exemples
+
+```js
+/resources/search?q=coordinate-system:2154    # métadonnées dont le système de coordonnées est EPSG 2154 ("RGF93 / Lambert-93")
+/resources/search?q=has-no:coordinate-system  # toute ressource dont le système de coordonnée n'est pas décrit
 ```
 
 ---

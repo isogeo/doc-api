@@ -10,7 +10,7 @@ Cette possibilité est utile dans différents cas de figure :
 
 - on souhaite générer des liens de visualisation sur OpenCatalog. Ces routes permettent de vérifier qu'OpenCatalog est bien présent dans le même partage que l'application
 
-- gérer une [ségrégation d'affichage par partages](methods/segregate), comme c'est le cas d'OpenCatalog ou du portail de données.
+- gérer une [ségrégation d'affichage par partages](methods/segregate.html), comme c'est le cas d'OpenCatalog ou du portail de données.
 
 ## Routes
 

@@ -28,26 +28,23 @@
   * [Liste d'identifiants](methods/idslist.md)
   * [Géographique](methods/geographic.md)
   * [Ségréger par partage source](methods/segregate.md)
-* [Partages \(/shares\)](shares.md)
+* [Partages)](shares.md)
 * [Téléchargement](download.md)
   * [Métadonnée](download/metadata.md)
 
 ## Ressources
 
 * [Généralités](resources/general.md)
-* [Sous-ressources](resources/sous-entites.md)
-  * [Contacts](resources/sous-entites/contacts.md)
+* [Sous-ressources](resources/subresources.md)
+  * [Contacts](resources/subresources/contacts.md)
+  * [Liens](resources/subresources/links.md)
+  * [Systèmes de coordonnées](resources/subresources/srs.md)
 
 ## Proxy
 
 * [Concept](proxy/concept.md)
 * [Appels à l'API](proxy/apirequests.md)
 * [Fichiers](proxy/files.md)
-
-## Entités
-
-* [Liens](entities/links.md)
-* [Contacts](entities/contacts.md)
 
 ## Annexes
 
