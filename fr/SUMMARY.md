@@ -54,5 +54,3 @@
 * [Glossaire](appendices/glossary.md)
 * [Notes des versions](appendices/versions.md)
 * [Swagger](appendices/swagger.md)
-* [Autres ressources](fr/appendices/others.md)
-
