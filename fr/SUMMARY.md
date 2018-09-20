@@ -27,7 +27,7 @@
   * [Inclure](methods/subresources.md)
   * [Liste d'identifiants](methods/idslist.md)
   * [Géographique](methods/geographic.md)
-  * [Ségréger par partage source](methods/segreger.md)
+  * [Ségréger par partage source](methods/shares.md)
 * [Partages \(/shares\)](shares.md)
 * [Téléchargement](download.md)
   * [Métadonnée](download/metadata.md)
