@@ -2,7 +2,7 @@
 
 > Paramètre : s
 
-### Description
+## Description
 
 Par défaut les routes de l’API concernent toutes les entités qui sont accessibles aux applications :
 * les entités accessibles à l’utilisateur dans le cas d’une [application utilisateur](/authentication/usersapps.md).
@@ -19,7 +19,7 @@ Par exemple, si un administrateur 1 du  GT (workgroup) A crée 2 partages diffé
 
 Ce paramètre permet à une application de proposer à l'utilisateur final de filtrer sur tel ou tel partage.
 
-### Valeurs possibles
+## Valeurs possibles
 
 Le paramètre accepte l'identifiant d'un partage, c'est-à-dire une chaîne de 32 caractères alphanumériques, généré à la création du partage via l'interface d'administration d'Isogeo \(https://app.isogeo.com/admin/shares/{sid}) :
 
@@ -29,9 +29,9 @@ Pour récupérer les informations d'un partage ou plusieurs partages, consulter 
 
 ---
 
-### Exemple {#sample}
+## Exemple {#sample}
 
-## Requête {#sample_request}
+### Requête {#sample_request}
 
 URL de recherche filtrée sur un partage :
 
@@ -41,8 +41,7 @@ https://v1.api.isogeo.com/resources/search?s=c502e8f7c9da4c3aacdf3d905672d54c
 
 L'application OpenCatalog fonctionne ainsi.
 
-## Réponse {#sample_response}
-
+### Réponse {#sample_response}
 
 ```json
 [

@@ -6,9 +6,5 @@ Il s'agit des termes non structurés que l'utilisateur peut passer librement au 
 
 Les caractéristiques du moteur de recherche sont détaillées dans l'aide des utilisateurs :
 
-http://help.isogeo.com/fr/features/inventory/search.html#la-recherche-textuelle
-
-
-
-
+http://help.isogeo.com/fr/admin/features/inventory/search.html#la-recherche-textuelle
 
