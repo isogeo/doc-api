@@ -5,11 +5,12 @@ L’API Isogeo est une API REST qui donne accès à des **entités** via des **r
 ## Principales routes
 
 | Verbe HTTP | URI | Description |
-| :---       | :--- | :--- |
-| GET        | /resources/search | Moteur de recherche des métadonnées |
-| GET        | /resources/{:rid} | Métadonnée détaillée |
-| GET        | /resources/{:rid}.xml | Téléchargement de la métadonnée au format XML ISO 19139 |
-| GET        | /shares/{:rid} | Caractéristiques des partages alimentant l'application de groupe |
+| :--- | :--- | :--- |
+| GET | /resources/search | Moteur de recherche des métadonnées |
+| GET | /resources/{:rid} | Métadonnée détaillée |
+| GET | /resources/{:rid}.xml | Téléchargement de la métadonnée au format XML ISO 19139 |
+| GET | /shares/ | Caractéristiques des partages alimentant l'application de groupe |
+| GET | /shares/{:sid} | Caractéristiques d'un partage à partir de son identifiant |
 
 ## Principales entités
 
