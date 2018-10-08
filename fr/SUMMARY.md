@@ -28,7 +28,7 @@
   * [Liste d'identifiants](methods/idslist.md)
   * [Géographique](methods/geographic.md)
   * [Ségréger par partage source](methods/segregate.md)
-* [Partages)](shares.md)
+* [Partages](shares.md)
 * [Téléchargement](download.md)
   * [Métadonnée](download/metadata.md)
 
@@ -51,3 +51,4 @@
 * [Glossaire](appendices/glossary.md)
 * [Notes des versions](appendices/versions.md)
 * [Swagger](appendices/swagger.md)
+
