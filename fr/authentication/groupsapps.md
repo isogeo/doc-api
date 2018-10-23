@@ -20,7 +20,7 @@ Une application de groupe utilise le flot [_Client Credentials Grant_](https://t
 
 L'équipe Isogeo référence l'application sur sa plateforme et l'affecte au/x groupe/s de travail adéquats.
 
-!["Une application de groupe déclarée Isogeo"](/assets/manage_app_group.png)
+!["Une application de groupe déclarée sur Isogeo"](/assets/manage_app_group.png)
 
 Les identifiants sont ensuite transmis au développeur sous la forme d'un fichier *client_secrets.json* dont la structure est la même que celle utilisée par Google ([voir la documentation](https://developers.google.com/api-client-library/python/guide/aaa_client_secrets)) :
 

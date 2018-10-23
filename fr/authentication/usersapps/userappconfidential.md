@@ -1,6 +1,28 @@
-# Applications utilisateur "confidentielles"
+# Applications utilisateur "confidentielles" - Authentification {#userapp-authentication}
 
-## Authorization Code Grant {#docs-internal-guid-945f0b5a-47a7-7369-21f8-04e80a256d25}
+## Paramètres d'accès {#userapp-confidential-access}
+
+L'équipe Isogeo référence l'application sur sa plateforme et renseigne les URLs de redirection fournies par le développeur.
+
+!["Une application utilisateur déclarée sur Isogeo"](/assets/manage_app_user.png)
+
+Les identifiants sont ensuite transmis au développeur sous la forme d'un fichier *client_secrets.json* dont la structure est la même que celle utilisée par Google ([voir la documentation](https://developers.google.com/api-client-library/python/guide/aaa_client_secrets)) :
+
+```json
+{
+  "installed": {
+    "client_id": "837647042410-75ifg...usercontent.com",
+    "client_secret":"asdlkfjaskd",
+    "redirect_uris": ["http://localhost", "urn:ietf:wg:oauth:2.0:oob"],
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://accounts.google.com/o/oauth2/token"
+  }
+}
+```
+
+Noter le nom du dictionnaire `installed`, qui marque la différence avec les applications utilsiateur de type public.
+
+## Authorization Code Grant {#userapp-flow}
 
 La documentation officielle de ce flot est disponible [dans la RFC 6749](http://tools.ietf.org/html/rfc6749#section-4.1).
 
