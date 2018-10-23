@@ -24,7 +24,13 @@ La documentation officielle de ce flot est disponible dans [la RFC 6749](https:/
 
 * avec un contenu qui indique `grant_type=client_credentials`
 
-* avec [un en-tête d’authentification de typeBasic](http://tools.ietf.org/html/rfc2617#section-2), où l’on considère que le nom d’utilisateur à encoder est le _client\_id_ et le mot de passe à encoder est le _client\_secret_ \(ce qui revient à encoder en[Base 64](https://en.wikipedia.org/wiki/Base64) la chaîne `{*client_id*}:{*client_secret*}`, sans les accolades\). Exemple :
+* avec [un en-tête d’authentification de typeBasic](http://tools.ietf.org/html/rfc2617#section-2), où l’on considère que :
+
+  * le nom d’utilisateur est le _client\_id_
+
+  * le mot de passe est le _client\_secret._
+
+  Ce qui revient à encoder en [Base 64](https://en.wikipedia.org/wiki/Base64) la chaîne `{client_id}:{client_secret} ` \(sans les accolades\). Exemple :
 
   `Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW`
 
