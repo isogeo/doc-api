@@ -21,13 +21,19 @@ Désignent les applications capables de stocker et de transmettre ses identifian
 
 Une application confidentielle utilise le flot [Authorization Code Grant](https://tools.ietf.org/html/rfc6749#section-4.1) pour permettre à l’utilisateur de s’authentifier à la plateforme Isogeo.
 
-L'interface d'administration d'Isogeo, APP \(https://app.isogeo.com\), est une application confidentielle.
+L'interface d'administration d'Isogeo, APP \([https://app.isogeo.com\](https://app.isogeo.com\)\), est une application confidentielle.
+
+[Consulter la section dédiée à l'authentification des applications utilisateur de type confidentiel](/authentication/usersapps/userappconfidential.md).
 
 ### Applications publiques {#userapp-public}
 
 A l'inverse, ce type désigne les applications incapables de stocker ou de transmettre ses identifiants sans les dévoiler à l’utilisateur. Par exemple une application qui s’exécute entièrement dans le navigateur \(application en javascript en général\) et dont le code source doit être entièrement téléchargé par le client.
 
 Une application publique utilise le flot [Implicit Grant](https://tools.ietf.org/html/rfc6749#section-4.2) pour permettre à l’utilisateur de s’authentifier à la plateforme Isogeo.
+
+> [Consulter la section dédiée à l'authentification des applications utilisateur de type public](/authentication/usersapps/userapppublic.md).
+
+---
 
 ### Cas des applications natives {#userapp-natives}
 
