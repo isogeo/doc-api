@@ -1,4 +1,4 @@
-# URIs de redirection
+# URIs de redirection 
 
 Les flots d’authentification disponibles nécessitent l’utilisation d’un navigateur \(potentiellement embarqué pour une application de bureau\) et se basent sur un principe de redirections \([HTTP 302](https://en.wikipedia.org/wiki/HTTP_302)\) pour fournir un code d’autorisation à l’application. Dans un souci de sécurité il est donc nécessaire d’enregistrer préalablement la ou les URIs de redirection qui correspondent au\(x\) domaine\(s\) de votre application. Les URIs enregistrées doivent correspondre exactement aux routes acceptées par votre application.
 
@@ -20,5 +20,5 @@ Les URIs prédéfinies \(qui doivent quand même être enregistrées application
 
 * `urn:ietf:wg:oauth:2.0:oob:auto:` renseigne le code d’autorisation dans le titre de la page, ce qui permet à une application intelligente de le récupérer automatiquement avant de fermer \(automatiquement si possible\) la fenêtre du navigateur.
 
-Ce système est identique à celui utilisé par Google.
+Pour information, ce système est identique à celui utilisé par Google.
 
