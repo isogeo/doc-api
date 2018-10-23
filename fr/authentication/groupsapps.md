@@ -37,13 +37,13 @@ Les identifiants sont ensuite transmis au développeur sous la forme d'un fichie
 
 ### Client Credentials Grant {#groupapp-flow}
 
-La documentation officielle de ce flot est disponible dans [la RFC 6749](https://tools.ietf.org/html/rfc6749#section-4.4). Pour paraphraser, la récupération d’un _access token_ se fait sur la route [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token). Donc :
+La documentation officielle de ce flot est disponible dans [la RFC 6749](https://tools.ietf.org/html/rfc6749#section-4.4). Pour paraphraser, la récupération d’un _access token_ se fait sur la route [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token).
 
-* la requête est un POST vers [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token?grant_type=client_credentials)
+La requête est un POST vers [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token?grant_type=client_credentials)
 
 * avec un contenu qui indique `grant_type=client_credentials`
 
-* avec [un en-tête d’authentification de typeBasic](http://tools.ietf.org/html/rfc2617#section-2), où l’on considère que :
+* avec [un en-tête d’authentification de typeBasic](https://tools.ietf.org/html/rfc2617#section-2), où l’on considère que :
 
   * le nom d’utilisateur est le *client_id*
   * le mot de passe est le *client_secret*

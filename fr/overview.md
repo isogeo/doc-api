@@ -13,7 +13,7 @@ L’API Isogeo est une [API REST](https://restfulapi.net/) qui communique en [JS
 
 ![](https://oauth.net/images/oauth-2-sm.png)
 
-L’authentification à l’API Isogeo se fait via [le protocole OAuth 2.0](http://tools.ietf.org/html/rfc6749) :
+L’authentification à l’API Isogeo se fait via [le protocole OAuth 2.0](https://tools.ietf.org/html/rfc6749) :
 
 * vous devez être en possession de vos identifiants d’application \(_client\_id_ et _client\_secret_\) qui vous ont été fournis directement par l’équipe Isogeo.
 
@@ -29,7 +29,7 @@ L’authentification à l’API Isogeo se fait via [le protocole OAuth 2.0](http
   * application de groupe : _Client Credentials Grant_.
 
 
-* un _access token_ valide doit être envoyé à la plateforme Isogeo lors de chaque appel à l’API via  [un en-tête d’authentification de type Bearer](http://tools.ietf.org/html/rfc6750#section-2).
+* un _access token_ valide doit être envoyé à la plateforme Isogeo lors de chaque appel à l’API via  [un en-tête d’authentification de type Bearer](https://tools.ietf.org/html/rfc6750#section-2).
 
 * un _access token_ a une date d’expiration et doit être renouvelé régulièrement, éventuellement avec un  _refresh token_.
 

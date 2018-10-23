@@ -9,54 +9,31 @@ La plateforme Isogeo distingue 2 types d’applications :
   * elles accèdent uniquement aux ressources auquel l’utilisateur a droit : pas d’utilisateur, pas de ressources.
   * exemple d'application : [Isogeo App](https://app.isogeo.com)
 
+
 * les [applications de groupe](/authentication/groupsapps.md) :
   * elles accèdent aux ressources de la plateforme en leur propre nom, sans notion d’utilisateur.
   * elles accèdent uniquement aux ressources qui leur ont été partagées par l'administrateur d'un ou plusieurs groupes de travail, via l'application Isogeo APP.
-  * exemple d'application : [OpenCatalog](https://open.isogeo.com)
+  * exemples d'application : [OpenCatalog](https://open.isogeo.com), les plugins pour SIG, Isogeo to Office
 
-Toute application, dveloppée par Isogeo ou un tiers, s'authentifie à la plateforme Isogeo via  [le protocole OAuth 2.0](http://tools.ietf.org/html/rfc6749). La documentation officielle de OAuth 2.0 fait donc référence pour l’authentification Isogeo \([RFC 6749](http://tools.ietf.org/html/rfc6749)\).
+Toute application, développée par Isogeo ou un tiers, s'authentifie à la plateforme Isogeo via  [le protocole OAuth 2.0](https://tools.ietf.org/html/rfc6749). La documentation officielle de OAuth 2.0 fait donc référence pour l’authentification Isogeo.
 
-Chaque type d’application, en fonction de ses caractéristiques peut utiliser un certain nombre de flots OAuth \(ou _grants_\). Les applications sont préalablement déclarées sur la plateforme Isogeo par l'équipe Isogeo  qui fournit alors les identifiants d’application :
+Chaque type d’application, en fonction de ses caractéristiques peut utiliser un certain nombre de flots OAuth \(ou _grants_\). Les applications sont préalablement déclarées sur la plateforme par l'équipe Isogeo. Elle fournit alors les identifiants d’application sous forme d'[un fichier client_secrets.json dont la structure, différente selon le type de l'application, est la même que celle utilisée par Google](https://developers.google.com/api-client-library/python/guide/aaa_client_secrets).
 
-* le _client\_id_
-* et le _client\_secret_.
 
 ---
 
 ## Généralités
 
-Le but de l’authentification est de récupérer un jeton d’accès à l’API, l'_access token_.
+Le but de l’authentification est de récupérer un jeton d’accès à l’API, l'*access token*.
 
 La récupération de ce jeton dépend du type d’application et de ses caractéristiques, mais est conforme au standard OAuth 2.0. Pour simplifier, fiabiliser et pérenniser le processus d’authentification il est donc fortement conseillé d’utiliser[des bibliothèques standard d’authentification OAuth 2.0](http://oauth.net/2/#client-libraries). Par exemple :
 
 * Javascript :  [oauth](https://www.npmjs.com/package/oauth).
 * .NET :  [Microsoft.Owin.Security.OAuth](https://www.nuget.org/packages/Microsoft.Owin.Security.OAuth).
 
-L’_access token_ ainsi récupéré permet d’accéder aux ressources fournies par l’API via  [un en-tête d’authentification de type Bearer](http://tools.ietf.org/html/rfc6750#section-2). Exemple :  `Authorization: Bearer mF_9.B5f-4.1JqM`.
+L’*access token* ainsi récupéré permet d’accéder aux ressources fournies par l’API via  [un en-tête d’authentification de type Bearer](https://tools.ietf.org/html/rfc6750#section-2). Exemple :  `Authorization: Bearer mF_9.B5f-4.1JqM`.
 
-La plupart des méthodes d’authentification disponibles nécessitent le transfert des identifiants de votre application : ces identifiants sont l’équivalent d’un couple login / mot de passe et ils ne doivent donc jamaisêtre visibles par les utilisateurs de votre application \(dans le code source javascript d’une application web par exemple\). Les méthodes courantes pour l’éviter sont :
+La plupart des méthodes d’authentification disponibles nécessitent le transfert des identifiants de votre application : ces identifiants sont l’équivalent d’un couple login / mot de passe et ils ne doivent donc jamais être visibles par les utilisateurs de votre application \(dans le code source javascript d’une application web par exemple\). Les méthodes courantes pour l’éviter sont :
 
 * l’utilisation d’un proxy \(applications web\).
 * modifier les caractéristiques de l’application pour éviter d’avoir à transmettre ces identifiants \(application utilisateur publique\).
-
----
-
-## Le refresh token
-
-Dans certains cas un refresh token est fourni avec l’access token. Ce jeton peut être utilisé afin de renouveler simplement l’access token. Il doit donc être protégé, de la même manière que les identifiants d’application.
-
-La documentation officielle de l’utilisation d’un _refresh token_ est disponible [dans la RFC 6749](http://tools.ietf.org/html/rfc6749#section-6).
-
-Pour paraphraser, le renouvellement d’un _access token_ se fait sur la route [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token). Donc :
-
-* la requête est un **POST** vers [https://id.api.isogeo.com/oauth/token?grant\_type=client\_credentials](https://id.api.isogeo.com/oauth/token?grant_type=client_credentials)
-
-* avec un contenu qui indique :
-
-  * `grant_type:refresh_token`
-  * `refresh_token: {token_récupéré_précédemment}`
-
-* avec [un en-tête d’authentification de typeBasic](http://tools.ietf.org/html/rfc2617#section-2), où l’on considère que le nom d’utilisateur à encoder est le  _client\_id_ et le mot de passe à encoder est le _client\_secret_ \(ce qui revient à encoder en[Base 64](https://en.wikipedia.org/wiki/Base64)la chaîne `{client_id}:{client_secret}`, sans les accolades\). Exemple : `Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW`
-
-L’access token est renvoyé au format JSON. Il permet l’accès aux ressources d’Isogeo en lecture seule et est valide pendant 1 heure. Un refresh token est également fourni.
-
