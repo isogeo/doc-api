@@ -12,7 +12,7 @@ Elle peut être associée à 0, n groupes de travail qui peuvent ainsi lui parta
 
 Une application de groupe accède en lecture seule à l’ensemble des fiches contenues dans l’ensemble des catalogues qui lui sont partagés. En revanche elle n’a pas directement accès à ces catalogues.
 
-Une application de groupe utilise le flot [_Client Credentials Grant_](#client-credentials-grant) pour s’authentifier à la plateforme Isogeo.
+Une application de groupe utilise le flot [_Client Credentials Grant_](https://tools.ietf.org/html/rfc6749#section-4.4) pour s’authentifier à la plateforme Isogeo.
 
 ## Client Credentials Grant {#groupapp_flow}
 
