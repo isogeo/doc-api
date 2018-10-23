@@ -5,6 +5,7 @@
 Une application de groupe possède :
 
 * un nom
+* une URL de description
 * une paire d'identifiants client
 
 Elle peut être associée à 0, n groupes de travail qui peuvent ainsi lui partager 0, n catalogues.
@@ -21,7 +22,7 @@ La documentation officielle de ce flot est disponible dans [la RFC 6749](https:/
 
 * avec un contenu qui indique `grant_type=client_credentials`
 
-* avec [un en-tête d’authentification de typeBasic](http://tools.ietf.org/html/rfc2617#section-2), où l’on considère que le nom d’utilisateur à encoder est leclient\_idet le mot de passe à encoder est leclient\_secret\(ce qui revient à encoder en[Base 64](https://en.wikipedia.org/wiki/Base64)la chaîne{client\_id}:{client\_secret}, sans les accolades\). Exemple :
+* avec [un en-tête d’authentification de typeBasic](http://tools.ietf.org/html/rfc2617#section-2), où l’on considère que le nom d’utilisateur à encoder est le *client_id* et le mot de passe à encoder est le *client_secret* (ce qui revient à encoder en[Base 64](https://en.wikipedia.org/wiki/Base64) la chaîne `{*client_id*}:{*client_secret*}`, sans les accolades). Exemple :
 
   `Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW`
 
