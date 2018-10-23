@@ -14,7 +14,9 @@ Une application de groupe accède en lecture seule à l’ensemble des fiches co
 
 Une application de groupe utilise le flot [_Client Credentials Grant_](https://tools.ietf.org/html/rfc6749#section-4.4) pour s’authentifier à la plateforme Isogeo.
 
-## Client Credentials Grant {#groupapp_flow}
+## Authentification {#groupapp-authentication}
+
+### Client Credentials Grant
 
 La documentation officielle de ce flot est disponible dans [la RFC 6749](https://tools.ietf.org/html/rfc6749#section-4.4). Pour paraphraser, la récupération d’un _access token_ se fait sur la route [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token). Donc :
 
@@ -22,13 +24,13 @@ La documentation officielle de ce flot est disponible dans [la RFC 6749](https:/
 
 * avec un contenu qui indique `grant_type=client_credentials`
 
-* avec [un en-tête d’authentification de typeBasic](http://tools.ietf.org/html/rfc2617#section-2), où l’on considère que le nom d’utilisateur à encoder est le *client_id* et le mot de passe à encoder est le *client_secret* (ce qui revient à encoder en[Base 64](https://en.wikipedia.org/wiki/Base64) la chaîne `{*client_id*}:{*client_secret*}`, sans les accolades). Exemple :
+* avec [un en-tête d’authentification de typeBasic](http://tools.ietf.org/html/rfc2617#section-2), où l’on considère que le nom d’utilisateur à encoder est le _client\_id_ et le mot de passe à encoder est le _client\_secret_ \(ce qui revient à encoder en[Base 64](https://en.wikipedia.org/wiki/Base64) la chaîne `{*client_id*}:{*client_secret*}`, sans les accolades\). Exemple :
 
   `Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW`
 
-L’_access token_ est renvoyé au format JSON (voir exemple ci-dessous). Il permet l’accès aux ressources d’Isogeo en lecture seule et est valide pendant 1 heure.
+L’_access token_ est renvoyé au format JSON \(voir exemple ci-dessous\). Il permet l’accès aux ressources d’Isogeo en lecture seule et est valide pendant 1 heure.
 
-### Exemple d'access token renvoyé {#grouapp_sample_accessToken}
+#### Exemple d'access token renvoyé
 
 ```json
 {
@@ -37,3 +39,6 @@ L’_access token_ est renvoyé au format JSON (voir exemple ci-dessous). Il per
   "expires_in": 3599
 }
 ```
+
+
+
