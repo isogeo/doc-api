@@ -35,7 +35,7 @@ Les identifiants sont ensuite transmis au développeur sous la forme d'un fichie
 }
 ```
 
-### Client Credentials Grant
+### Client Credentials Grant {#groupapp-flow}
 
 La documentation officielle de ce flot est disponible dans [la RFC 6749](https://tools.ietf.org/html/rfc6749#section-4.4). Pour paraphraser, la récupération d’un _access token_ se fait sur la route [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token). Donc :
 

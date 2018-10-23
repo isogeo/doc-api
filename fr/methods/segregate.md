@@ -23,7 +23,7 @@ Ce paramètre permet à une application de proposer à l'utilisateur final de fi
 
 Le paramètre accepte l'identifiant d'un partage, c'est-à-dire une chaîne de 32 caractères alphanumériques, généré à la création du partage via l'interface d'administration d'Isogeo \(https://app.isogeo.com/admin/shares/{sid}) :
 
-![](../../assets/api_share_id_app_admin.PNG "Identifiant d\'un partage dans l\'interface d\'administration")
+![](/assets/api_share_id_app_admin.png "Identifiant d&apos;un partage dans l&apos;interface d&apos;administration")
 
 Pour récupérer les informations d'un partage ou plusieurs partages, consulter [la section dédiée](/shares.md).
 
