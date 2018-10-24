@@ -93,9 +93,8 @@ jobs:
       - *attach_workspace
 
       - run:
-          name: Generate robots.txt
-          command: touch -t "User-agent: *
-          Disallow: /" > dist/robots.txt
+          name: Apply robots.txt
+          command: mv robots_qa.txt dist/robots.txt
 
       - run:
           name: Install rclone
