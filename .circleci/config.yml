@@ -94,7 +94,7 @@ jobs:
 
       - run:
           name: Apply robots.txt
-          command: mv robots_qa.txt dist/robots.txt
+          command: mv robots_qa.txt dist/api/robots.txt
 
       - run:
           name: Install rclone
