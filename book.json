@@ -3,7 +3,7 @@
         "ga",
         "image-captions",
         "page-toc",
-        "sitemap",
+        "sitemap-general",
         "timeline",
         "toggle-headers",
         "swagger"
@@ -21,8 +21,8 @@
                 }
             }
         },
-        "sitemap": {
-            "hostname": "http://help.isogeo.com/api/"
+        "sitemap-general": {
+            "prefix": "http://help.isogeo.com/api/"
         },
         "theme-api": {
             "split": true,

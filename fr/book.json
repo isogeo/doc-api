@@ -7,13 +7,5 @@
             "Autres documentations Isogeo": "http://help.isogeo.com"
         }
     },
-    "title": "Documentation de l'API REST Isogeo pour les développeurs tiers",
-    "plugins": [
-        "sitemap"
-    ],
-    "pluginsConfig": {
-        "sitemap": {
-            "hostname": "http://help.isogeo.com/api/fr/"
-        }
-    }
+    "title": "Documentation de l'API REST Isogeo pour les développeurs tiers"
 }
