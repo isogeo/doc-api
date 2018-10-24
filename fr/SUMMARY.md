@@ -31,6 +31,7 @@
 * [Partages](shares.md)
 * [Téléchargement](download.md)
   * [Métadonnée](download/metadata.md)
+* [Types de liens](links-kinds.md)
 
 ## Ressources
 
