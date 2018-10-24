@@ -21,9 +21,6 @@
                 }
             }
         },
-        "sitemap": {
-            "hostname": "http://help.isogeo.com/api/"
-        },
         "theme-api": {
             "split": true,
             "languages": [
