@@ -93,8 +93,10 @@ jobs:
       - *attach_workspace
 
       - run:
-          name: Apply robots.txt
-          command: mv robots_qa.txt dist/api/robots.txt
+          name: Rename robots.txt
+          command: |
+            mv dist/api/robots_qa.txt dist/api/robots.txt
+            rm dist/api/robots_prod.txt
 
       - run:
           name: Install rclone
