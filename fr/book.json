@@ -1,8 +1,11 @@
 {
- "language": "fr",
- "links": {
-             "sidebar": {
-                         "Site Isogeo": "http://www.isogeo.com"
-                         }
-             }
- }
+    "author": "Isogeo",
+    "language": "fr",
+    "links": {
+        "sidebar": {
+            "Site Isogeo": "https://www.isogeo.com",
+            "Autres documentations Isogeo": "http://help.isogeo.com"
+        }
+    },
+    "title": "Documentation de l'API REST Isogeo pour les développeurs tiers"
+}
