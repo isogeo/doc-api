@@ -5,6 +5,7 @@
 ## Description
 
 Par défaut les routes de l’API concernent toutes les entités qui sont accessibles aux applications :
+
 * les entités accessibles à l’utilisateur dans le cas d’une [application utilisateur](/authentication/usersapps.md).
 * les entités partagées à l’application dans le cas d’une [application de groupe](/authentication/groupsapps.md).
 
@@ -21,9 +22,9 @@ Ce paramètre permet à une application de proposer à l'utilisateur final de fi
 
 ## Valeurs possibles
 
-Le paramètre accepte l'identifiant d'un partage, c'est-à-dire une chaîne de 32 caractères alphanumériques, généré à la création du partage via l'interface d'administration d'Isogeo \(https://app.isogeo.com/admin/shares/{sid}) :
+Le paramètre accepte l'identifiant d'un partage, c'est-à-dire une chaîne de 32 caractères alphanumériques, généré à la création du partage via l'interface d'administration d'Isogeo \(<https://app.isogeo.com/admin/shares/{sid})> :
 
-![](/assets/api_share_id_app_admin.png "Identifiant d&apos;un partage dans l&apos;interface d&apos;administration")
+![Identifiant d'un partage depuis APP](/assets/api_share_id_app_admin.png "Identifiant d&apos;un partage dans l&apos;interface d&apos;administration")
 
 Pour récupérer les informations d'un partage ou plusieurs partages, consulter [la section dédiée](/shares.md).
 
@@ -35,7 +36,7 @@ Pour récupérer les informations d'un partage ou plusieurs partages, consulter 
 
 URL de recherche filtrée sur un partage :
 
-```
+```html
 https://v1.api.isogeo.com/resources/search?s=c502e8f7c9da4c3aacdf3d905672d54c
 ```
 
@@ -49,7 +50,7 @@ L'application OpenCatalog fonctionne ainsi.
         "_created": "2014-09-25T21:20:36.1845765+00:00",
         "_creator": {
             "_created": "2014-04-18T16:23:38.617093+00:00",
-            "_id": "1a2b3c4d5e6f7g8h9i0j11k12l13m14n",            
+            "_id": "1a2b3c4d5e6f7g8h9i0j11k12l13m14n",
             "_modified": "2017-12-19T14:31:13.9735939+00:00",
             "_tag": "owner:1a2b3c4d5e6f7g8h9i0j11k12l13m14n",
             "areKeywordsRestricted": false,

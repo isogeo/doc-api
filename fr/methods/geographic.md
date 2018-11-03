@@ -1,6 +1,6 @@
 # Appliquer un filtre géographique
 
-Dans Isogeo, les métadonnées peuvent contenir une enveloppe géographique \(mais ça n'est pas systématique\). 
+Dans Isogeo, les métadonnées peuvent contenir une enveloppe géographique \(mais ça n'est pas systématique\).
 
 Elle est alors décrite comme un GeoJSON inclus dans le JSON renvoyé :
 
@@ -51,11 +51,11 @@ Renvoie les ressources dont l’enveloppe possède [la relation géographique sp
 
 > Paramètre : **geo**
 
-### Description
+### Description {#geo_descr}
 
 Renvoie les ressources dont l’enveloppe possède [la relation géographique spécifiée](#georel) avec l’enveloppe envoyée. Si la ressource ne possède pas d’enveloppe, elle n’est pas remontée. L’enveloppe doit être décrite au format WKT.
 
-### Exemples
+### Exemples {#geo_example}
 
 ```js
 /resources/search?geo=POLYGON((0.582%2040.496%2C%200.231%2040.737%2C%200.736%2042.869%2C%203.351%2042.386%2C%203.263%2041.814%2C%202.164%2041.265%2C%200.978%20%20%2040.957%2C%200.802%2040.781%2C%200.978%2040.649%2C%200.582%2040.496))
@@ -67,13 +67,13 @@ Renvoie les ressources dont l’enveloppe possède [la relation géographique sp
 
 > Paramètre : **rel**
 
-### Description
+### Description {#georel_descr}
 
 Permet de spécifier la requête spatiale appliquée pour filtrer les résultats dans une emprise ou une enveloppe polygonale.
 
 Uniquement interprété si l'un des paramètres [_box_](#box) ou [_geo_](#geo) est passé.
 
-### Valeurs possibles
+### Valeurs possibles {#georel_values}
 
 Les valeurs possibles sont basées sur les relations standard définies par l’OGC dans  [OGC 06-103r4](http://portal.opengeospatial.org/files/?artifact_id=25355) §6.1.15.
 
@@ -92,7 +92,7 @@ En pratique, les valeurs les plus couramment utilisées sont :
 * within
 * contains
 
-### Exemples
+### Exemples {#georel_example}
 
 ```js
 /resources/search?geo=POLYGON((0.582%2040.496%2C%200.231%2040.737%2C%200.736%2042.869%2C%203.351%2042.386%2C%203.263%2041.814%2C%202.164%2041.265%2C%200.978%20%20%2040.957%2C%200.802%2040.781%2C%200.978%2040.649%2C%200.582%2040.496))&rel=within
@@ -109,4 +109,3 @@ Si les 2 paramètres sont présents dans la même requête, l'opérateur géomé
 ### Sens de numérisation des enveloppes
 
 A DOCUMENTER
-

@@ -2,20 +2,20 @@
 
 > Paramètre : **_lang**
 
-### Description
+## Description
 
 Certaines informations sont disponibles en plusieurs langues : les thèmes INSPIRE par exemple.
 
-### Valeurs possibles
+## Valeurs possibles
 
 | Valeur | Description                  |
 | :----- | :--------------------------- |
 | en     | anglais                      |
 | **fr** | français - VALEUR PAR DEFAUT |
 
-### Exemples
+## Exemples
 
-#### Résultats en français
+### Résultats en français
 
 ```js
 /resources/search?
@@ -38,7 +38,7 @@ Donne :
 }
 ```
 
-#### Résultats en anglais
+### Résultats en anglais
 
 ```js
 /resources/search?_lang=en
@@ -58,7 +58,3 @@ Donne :
   "keyword:inspire-theme:cadastralparcels": "Cadastral parcels"
 }
 ```
-
-
-
-

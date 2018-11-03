@@ -7,16 +7,16 @@ Au-delà des termes de recherche libre, le moteur de recherche permet de filter 
 ---
 
 ## Actions liées {#action}
- 
+
 Une métadonnée peut contenir des liens (_links_) que l'utilisateur qualifie selon leur action finale.
 
 > Structure : q=**action:{ACTION_CODE_VALUE}**
 
 Caractéristiques :
+
 * champ optionnel
 * les liens sont visibles dans la sous-ressource _links_
 * plusieurs valeurs possibles
-
 
 ### Valeurs possibles
 
@@ -36,17 +36,18 @@ Caractéristiques :
 ---
 
 ## Mots-clés {#keyword}
- 
+
 Une métadonnée peut contenir 0 - n mots-clés définis par l'utilisateur lors de l'étiquetage (édition).
 
 > Structure : q=**keyword:isogeo:{KEYWORD_CODE_VALUE}**
 
 Caractéristiques :
+
 * champ optionnel
 * les keywords sont visibles dans la sous-ressource _keywords_
 * plusieurs valeurs possibles
 
-### Exemples
+### Exemples {#keyword_example}
 
 ```js
 /resources/search?q=type:dataset keyword:isogeo:2014   # jeux de données ayant le mot-clé '2014'
@@ -62,6 +63,7 @@ Dans Isogeo, chaque métadonnée appartient au groupe de travail (workgroup) dan
 > Structure : q=**owner:{WORKGROUP_ID}**
 
 Caractéristiques :
+
 * valeur obigatoire
 * à la racine du modèle
 * 1 seule occurrence possible
@@ -75,11 +77,12 @@ Dans Isogeo, chaque métadonnée indique le type de ressource qu'elle décrit. D
 > Structure : q=**type:{TYPE_CODE_VALUE}**
 
 Caractéristiques :
+
 * valeur obigatoire
 * à la racine du modèle
 * 1 seule occurence possible
 
-### Valeurs possibles
+### Valeurs possibles {#type_values}
 
 | Valeur         | Ressource décrite                         |
 | :------------- | :---------------------------------------- |
@@ -91,7 +94,7 @@ Caractéristiques :
 
 Les différents types sont expliqués dans [le guide utilisateur](http://help.isogeo.com/fr/features/documentation/#les-diff%C3%A9rents-types-de-ressources).
 
-### Exemples
+### Exemples {#type_example}
 
 ```js
 /resources/search?q=route type:dataset  # jeux de données contenant le mot 'routes'
@@ -100,17 +103,18 @@ Les différents types sont expliqués dans [le guide utilisateur](http://help.is
 ---
 
 ## Formats source {#format}
- 
+
 Une métadonnée peut contenir le format source du jeu de données décrit. Ce format peut être renseigné par le Scan FME ou manuellement.
 
 > Structure : q=**format:{FORMAT_CODE_VALUE}**
 
 Caractéristiques :
+
 * champ optionnel
 * les formats  sont visibles dans la sous-ressource _keywords_
 * une seule valeur possible
 
-### Exemples
+### Exemples {#format_example}
 
 ```js
 /resources/search?q=format:shp   # métadonnées dont le format est Esri Shapefiles
@@ -120,12 +124,12 @@ Caractéristiques :
 ---
 
 ## Fournisseur {#provider}
- 
+
 Une métadonnée peut être créée via Isogeo ou via un outil externe (typiquement GeoNetwork) qui est moissonné par le client CSW. Pour les distinguer on peut se référer à l'identifiant universel mais il est possible de filtrer dessus.
 
 > Structure : q=**provider:{VALUE}**
 
-### Valeurs possibles
+### Valeurs possibles {#provider_values}
 
 | Valeur   | Description                                |
 | :------- | :----------------------------------------- |
@@ -136,7 +140,7 @@ Caractéristiques :
 
 * champ optionnel
 
-### Exemples
+### Exemples {#provider_example}
 
 ```js
 /resources/search?q=provider:auto
@@ -146,7 +150,7 @@ Caractéristiques :
 ---
 
 ## Système de coordonnées source {#srs}
- 
+
 Une métadonnée peut contenir le système de coordonnées source du jeu de données décrit. Ce système de coordonnées peut être renseigné par le Scan FME ou manuellement.
 La valeur du filtre est le code EPSG du système demandé.
 
@@ -158,7 +162,7 @@ Caractéristiques :
 * les systèmes de coordonnées  sont visibles dans la sous-ressource _coordinate-system_
 * une seule valeur possible
 
-### Exemples
+### Exemples {#srs_example}
 
 ```js
 /resources/search?q=coordinate-system:2154    # métadonnées dont le système de coordonnées est EPSG 2154 ("RGF93 / Lambert-93")

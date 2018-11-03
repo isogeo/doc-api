@@ -30,10 +30,3 @@ Les applications de groupe \(voir [la rubrique dédiée](/authentication/groupsa
 Un groupe de travail est l'entité correspondant à . On parle aussi de _propriétaire \(owner\)_, car certaines entités appartiennent à un groupe de travail.
 
 ---
-
-## Entités et sous-entités
-
-### 
-
-
-

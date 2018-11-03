@@ -1,5 +1,4 @@
-Proxy : généralités
-===================
+# Proxy : généralités
 
 Dans le cas d’une application web typiquement, l’utilisation d’un proxy est nécessaire :
 
@@ -15,5 +14,3 @@ Toutes les plateformes modernes de développement web offrent des moyen simples 
 Les risques liés au développement d’un proxy sont liés à la confidentialité des données partagées à vos applications : si vous devez vérifier que seule l’application peut faire appel à son proxy ([quelques techniques disponibles ici](https://en.wikipedia.org/wiki/Cross-site_request_forgery#Prevention)).
 
 Dans la mesure du possible, nous serons reconnaissants à nos développeurs si leur proxy nous transmet des informations sur l’origine des requêtes qui sont transmises à l’API ([X-Forwarded-For](https://en.wikipedia.org/wiki/X-Forwarded-For) par exemple).
-
-

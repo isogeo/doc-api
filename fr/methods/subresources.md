@@ -1,12 +1,12 @@
-## Sous-ressources à inclure dans le modèle des résultats {#limit}
+# Sous-ressources à inclure dans le modèle des résultats {#limit}
 
 > Paramètre : **\_include**
 
-### Description
+## Description
 
 Ce paramètre permet de gérer les différentes extensions du modèle à renvoyer pour les résultats de recherche.
 
-### Valeurs possibles
+## Valeurs possibles
 
 | Valeur | Description | Types de métadonnées concernés |
 | :--- | :--- | :---: |
@@ -34,6 +34,3 @@ A DOCUMENTER
 ```
 
 ---
-
-
-

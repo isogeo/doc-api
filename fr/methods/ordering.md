@@ -16,7 +16,6 @@ Si aucun terme n'est envoyé, le score de pertinence est donc le même pour tous
 
 Le tableau ci-dessous indique les valeurs acceptées pour le paramètre _ob_.
 
-
 | Valeur | Description | Présence systématique |
 | :--- | :--- | :--- |
 | \_created | date de création de la **métadonnée** | OUI |
@@ -26,7 +25,6 @@ Le tableau ci-dessous indique les valeurs acceptées pour le paramètre _ob_.
 | **relevance** | pertinence par apport aux termes de recherche - VALEUR PAR DEFAUT | Quand un terme de recherche est saisi |
 | title | titre de la métadonnée | OUI |
 
-
 ### Points de vigilance
 
 #### Métadonnée ou donnée : _underscore rules!_
@@ -35,9 +33,7 @@ Il y a un fort risque de confusion entre les dates concernant la métadonnée et
 
 #### Tri inopérant
 
-
 A DOCUMENTER : exemple date non remplie
-
 
 ### Exemples
 
@@ -51,22 +47,19 @@ A DOCUMENTER : exemple date non remplie
 
 > Paramètre : **od**
 
-### Description
+### Description {#od_descr}
 
 Signifie OrderDirection. Permet de choisir le sens du tri.
 
-### Valeurs possibles
+### Valeurs possibles {#od_values}
 
 | Valeur    | Description |
 | :-------- | :---------- |
 | **desc ** | descendant  |
 | asc       | ascendant   |
 
-### Exemples
+### Exemples {#od_values}
 
 ```js
 /resources/search?ob=title&od=asc  # tri par ordre alphabétique.
 ```
-
-
-

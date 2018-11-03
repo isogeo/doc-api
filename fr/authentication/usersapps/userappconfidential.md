@@ -61,7 +61,7 @@ Muni du code d’autorisation précédent, la récupération d’un *access toke
     * le nom d’utilisateur est le *client_id*
     * le mot de passe est le *client_secret*
 
-    Ce qui revient à encoder en [Base 64](https://en.wikipedia.org/wiki/Base64) la chaîne `{client_id}:{client_secret} ` \(sans les accolades\). Exemple :
+    Ce qui revient à encoder en [Base 64](https://en.wikipedia.org/wiki/Base64) la chaîne `{client_id}:{client_secret}` \(sans les accolades\). Exemple :
 
     `Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW`
 
@@ -85,6 +85,6 @@ Dans le cas d'Isogeo, le renouvellement d’un _access token_ se fait sur la rou
   * le nom d’utilisateur est le *client_id*
   * le mot de passe est le *client_secret*
 
-  Ce qui revient à encoder en [Base 64](https://en.wikipedia.org/wiki/Base64) la chaîne `{client_id}:{client_secret} ` \(sans les accolades\). Exemple :
+  Ce qui revient à encoder en [Base 64](https://en.wikipedia.org/wiki/Base64) la chaîne `{client_id}:{client_secret}` \(sans les accolades\). Exemple :
 
   `Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW`

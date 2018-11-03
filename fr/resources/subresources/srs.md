@@ -4,7 +4,6 @@ Par défaut, l'information du système de coordonnées du jeu de données source
 
 > _include=coordinate-system
 
-
 ## Exemple
 
 ### Par défaut {#default}

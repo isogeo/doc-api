@@ -11,7 +11,7 @@ actions: tableau d’actions possibles sur cette ressource associée. Peut prend
 
 * view : la ressource associée est destinée à être visualisée
 * download : la ressource associée est destinée à être téléchargée
-* other : des actions autres que la visualisation ou le téléchargement sont possibles sur la ressource associée 
+* other : des actions autres que la visualisation ou le téléchargement sont possibles sur la ressource associée
 
 size: \(uniquement disponible pour les ressources associée de type hosted\) taille du fichier hébergé en octets  
 link: \(uniquement pour les ressources associées de type link\): ressource associée pointée
@@ -42,6 +42,3 @@ type: type de la ressource associée. Peut prendre les valeurs :
 * url: une simple URL.
 * hosted: une URL \(relative\) vers un fichier hébergé sur la plateforme Isogeo. une application tierce devra en général rendre cette URL accessible via un proxy.
 * link: lien issu d’une autre ressource \(voir plus bas pour plus d’explications\).
-
-
-

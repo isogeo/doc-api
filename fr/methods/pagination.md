@@ -29,20 +29,17 @@ Valeur par défaut : **20**.
 
 > Paramètre : **\_offset**
 
-### Description
+### Description {#offset_descr}
 
 Placement du curseur dans l'ensemble des résultats de la recherche.
 
-### Valeurs possibles
+### Valeurs possibles {#offset_values}
 
 Un entier compris entre 0 et le nombre maximum de résultats.  
 Valeur par défaut : **0**.
 
-### Exemples
+### Exemples {#offset_example}
 
 ```js
 /resources/search?ob=_created&od=desc&_offset=20    # dernières fiches créées sauf les 20 premières (ou à partir de la 21è)
 ```
-
-
-
