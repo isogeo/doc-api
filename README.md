@@ -22,6 +22,3 @@ Deployment rules:
 
 * each commit triggers a deployment on QA
 * each tagged commit triggers a deployment on PROD - [see tags](https://github.com/isogeo/doc-api/tags)
-
-
-

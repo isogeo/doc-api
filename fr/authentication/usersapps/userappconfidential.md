@@ -46,7 +46,7 @@ En cas de succès le navigateur est redirigé vers la route de l’application s
 
 ### Demande du jeton
 
-Muni du code d’autorisation précédent, la récupération d’unaccess tokense fait sur la route[https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token). Donc :
+Muni du code d’autorisation précédent, la récupération d’un *access token* se fait sur la route [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token). Donc :
 
 * la requête est un POST vers [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token) avec :
 
@@ -56,7 +56,7 @@ Muni du code d’autorisation précédent, la récupération d’unaccess tokens
     * `code` : le code d’autorisation
     * `redirect_uri` : la même adresse que pour la requête d’autorisation.
 
-  * [un en-tête d’authentification de typeBasic](https://tools.ietf.org/html/rfc2617#section-2), où l’on considère que :
+  * [un en-tête d’authentification de type Basic](https://tools.ietf.org/html/rfc2617#section-2), où l’on considère que :
 
     * le nom d’utilisateur est le *client_id*
     * le mot de passe est le *client_secret*
@@ -77,8 +77,8 @@ Dans le cas d'Isogeo, le renouvellement d’un _access token_ se fait sur la rou
 
 * un contenu qui indique :
 
-  * `grant_type:refresh_token`
-  * `refresh_token:{token_récupéré_précédemment}`
+  * `grant_type` : *refresh_token*
+  * `refresh_token` : *{le token_récupéré_précédemment}*
 
 * avec [un en-tête d’authentification de typeBasic](https://tools.ietf.org/html/rfc2617#section-2), où l’on considère que :
 
