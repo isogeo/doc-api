@@ -43,18 +43,60 @@ La requête est un POST vers [https://id.api.isogeo.com/oauth/token](https://id.
 
 * avec un contenu qui indique `grant_type=client_credentials`
 
-* avec [un en-tête d’authentification de typeBasic](https://tools.ietf.org/html/rfc2617#section-2), où l’on considère que :
+* avec [un en-tête d’authentification de type Basic](https://tools.ietf.org/html/rfc2617#section-2), où l’on considère que :
 
   * le nom d’utilisateur est le *client_id*
   * le mot de passe est le *client_secret*
 
-  Ce qui revient à encoder en [Base 64](https://en.wikipedia.org/wiki/Base64) la chaîne `{client_id}:{client_secret} ` \(sans les accolades\). Exemple :
+  Ce qui revient à encoder en [Base 64](https://en.wikipedia.org/wiki/Base64) la chaîne `{client_id}:{client_secret}` \(sans les accolades\). Exemple :
 
   `Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW`
 
 L’_access token_ est renvoyé au format JSON \(voir exemple ci-dessous\). Il permet l’accès aux ressources d’Isogeo en lecture seule et est valide pendant 1 heure.
 
-#### Exemple d'access token renvoyé
+> Voir aussi [le tutoriel du site auth0.com](https://auth0.com/docs/api-auth/tutorials/client-credentials)
+
+### Exemples {#groupapp_auth_examples}
+
+#### Requête
+
+##### cUrl
+
+En utilisant [cURL sur Windows](https://curl.haxx.se/windows/) (Powershell) :
+
+```powershell
+.\curl.exe --data "grant_type=client_credentials" <# on passe le type d'authentification en paramètre d'URL #> `
+           -u '{client_id}:{client_secret}' <# la chaîne est automatiquement encodée en Base64 par cURL #> `
+           --url https://id.api.isogeo.com/oauth/token <# url cible #> `
+           -X POST <# superflu mais plus lisible #> `
+           --header 'content-type: application/x-www-form-urlencoded'  <# superflu mais plus lisible #> `
+           --verbose <# requête détaillée #> `
+           --include <# réponse détaillée #>
+```
+
+##### Python
+
+
+Avec le package addditionnel `requests` :
+
+```python
+# -*- coding: UTF-8 -*-
+import requests
+
+# query string parameters
+payload = {"grant_type": "client_credentials"}
+
+# request
+rq_auth = requests.post(https://id.api.isogeo.com/oauth/token,
+                        auth=(client_id, client_secret),
+                        headers=head,
+                        data=payload)
+
+print(rq_auth.json())
+```
+> Astuce : utiliser [le package officiel Isogeo Python SDK](https://pypi.org/project/isogeo-pysdk/) qui facilite grandement l'utilisation de l'API avec Python.
+
+#### Structure de l'access token renvoyé {#groupapp_auth_example_response}
 
 ```json
 {
