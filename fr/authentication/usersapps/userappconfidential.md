@@ -24,31 +24,60 @@ Noter le nom du dictionnaire `installed`, qui marque la différence avec les app
 
 ## Authorization Code Grant {#userapp-confidential-flow}
 
-La documentation officielle de ce flot est disponible [dans la RFC 6749](https://tools.ietf.org/html/rfc6749#section-4.1).
+La documentation officielle de ce flot est disponible [dans la RFC 6749](https://tools.ietf.org/html/rfc6749#section-4.1). Ce flot se fait en 2 étapes :
+
+1. la requête d'autorisation :
+    1. un formulaire web (encapsulé ou non) demande à l'utilisateur final son identifiant/mot de passe Isogeo.
+    2. un code d'autorisation est renvoyé
+2. l'obtention du jeton d'accès (*access token*)
+
+Puis, le rafraîchissement du jeton d'accès (*access token*) en utilisant le jeton de rafraichissement (*refresh token*).
 
 !["oAuth2 - Schéma Authorization Code Grant"](/assets/oAuth_AuthorizationCodeGrant_FR.png)
 
-### Requête d’autorisation
+### Requête d’autorisation {#userapp_confidential_auth}
 
-La récupération du code d’autorisation se fait via un navigateur \(le navigateur en cours d’utilisation dans le cas d’une application web, un navigateur externe ou un navigateur embarqué dans le cas d’une application native\). Le client doit être redirigé sur la route d’autorisation [https://id.api.isogeo.com/oauth/authorize](https://id.api.isogeo.com/oauth/authorize):
+La récupération du code d’autorisation se fait via un navigateur \(le navigateur en cours d’utilisation dans le cas d’une application web, un navigateur externe ou un navigateur embarqué dans le cas d’une application native\). L'utilisateur doit être redirigé sur la route d’autorisation [https://id.api.isogeo.com/oauth/authorize](https://id.api.isogeo.com/oauth/authorize):
 
-* la requête est un GET vers [https://id.api.isogeo.com/oauth/authorize](https://id.api.isogeo.com/oauth/authorize)
+* la requête est un GET vers <https://id.api.isogeo.com/oauth/authorize>
 
 * avec des paramètres qui indiquent :
 
-  * response\_type:code
-  * client\_id: l’identifiant OAuth de l’application.
-  * redirect\_uri: l’adresse de l’application vers laquelle renvoyer le code d’autorisation \(préalablement enregistrée dans ses paramètres, par exemple  [https://app.isogeo.com/login/callback](https://app.isogeo.com/login/callback)\).
+  * `response_type`: code
+  * `client_id` : l’identifiant OAuth de l’application.
+  * `redirect_uri` : l’adresse de l’application vers laquelle renvoyer le code d’autorisation (préalablement enregistrée dans ses paramètres, par exemple  <https://localhost:5000/login/callback).>
 
-En cas de succès le navigateur est redirigé vers la route de l’application spécifiée ci-dessus, avec les paramètres :
+La requête est automatiquement redirigée - [HTTP 302 Found](https://developer.mozilla.org/fr/docs/Web/HTTP/Status/302) vers le formulaire d'authentification intégré à Isogeo (https://id.api.isogeo.com/login) avec un paramètre de retour d'URL correspondant à la requête intiale. C'est l'étape à laquelle l'utilisateur final doit entrer son identifiant/mot de passe Isogeo :
 
-* code: le code d’autorisation.
+![Formulaire d&apos;authentification Isogeo](/assets/api_id_auth_login_form.png)
 
-### Demande du jeton
+#### Exemples {#userapp_confidential_auth_examples}
 
-Muni du code d’autorisation précédent, la récupération d’un *access token* se fait sur la route [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token). Donc :
+##### Navigateur
 
-* la requête est un POST vers [https://id.api.isogeo.com/oauth/token](https://id.api.isogeo.com/oauth/token) avec :
+L'URL peut être ouverte directement dans un navigateur :
+
+```http
+https://id.api.isogeo.com/oauth/authorize?response_type=code&client_id=sample-3rdapp-demo-test-uuid-1a2b3c4d5e6f7g8h9i0j11k12l&http://localhost:5000/login/oauth/callback
+```
+
+Qui redirige donc vers :
+
+```http
+https://id.api.isogeo.com/login?ReturnUrl=https%3A%2F%2Fid.api.isogeo.com%2Foauth%2Fauthorize%3Fresponse_type%3Dcode%26client_id%3Dclient_id=sample-3rdapp-demo-test-uuid-1a2b3c4d5e6f7g8h9i0j11k12l%26http%3A%2F%2Flocalhost%3A5000%2Flogin%2Foauth%2Fcallback
+```
+
+En cas de succès le navigateur est redirigé vers l'URI de retour (*callback*) enrgeistrée sur la plateforme, avec en paramètre le code d’autorisation (`code`) en paramètre d'URL :
+
+```http
+http://localhost:5000/login/oauth/callback?code=%2B7CNjbPnhNbRgieXBS3YDKF%2BtmWLpSQWyQoQd%2Fy3yA6maBTV1cVTtNlyhG7gRvwIlQLlF15hv4dFb8kX%2FMlClU%2B%2FNTZuTRRDCWcop1p8ZF%2BR%2BQ8KbvKNkW%2FSNKWGz43H
+```
+
+### Demande du jeton {#userapp_confidential_access}
+
+Muni du code d’autorisation précédent, la récupération d’un *access token* se fait sur la route <https://id.api.isogeo.com/oauth/token.> Donc :
+
+* la requête est un POST vers <https://id.api.isogeo.com/oauth/token> avec :
 
   * un contenu qui contient les paramètres :
 
@@ -67,7 +96,7 @@ Muni du code d’autorisation précédent, la récupération d’un *access toke
 
 L’*access_token* est renvoyé au format JSON. Il permet l’accès aux ressources d’Isogeo en lecture seule et est valide pendant 1 heure. Un refresh token est également fourni.
 
-## Le refresh token
+### Le refresh token {#userapp_confidential_refresh}
 
 un *refresh token* est fourni avec l’*access token*. Ce jeton peut être utilisé afin de renouveler simplement l’*access token*. Il doit donc être protégé, de la même manière que les identifiants d’application.
 

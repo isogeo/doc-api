@@ -1,6 +1,5 @@
 ---
 description: Documentation API REST Isogeo - Page d'accueil
-keywords: API,REST,Isogeo,développement,application tierce
 ---
 
 !["API Isogeo - Logo"](../assets/api_rest_isogeo_logo.jpg "API REST Isogeo - Logo")
