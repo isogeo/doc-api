@@ -13,7 +13,7 @@ Les identifiants sont ensuite transmis au développeur sous la forme d'un fichie
   "installed": {
     "client_id": "837647042410-75ifg...usercontent.com",
     "client_secret":"asdlkfjaskd",
-    "redirect_uris": ["http://localhost", "urn:ietf:wg:oauth:2.0:oob"],
+    "redirect_uris": ["https://localhost:5000/login/callback", "urn:ietf:wg:oauth:2.0:oob"],
     "auth_uri": "https://accounts.google.com/o/oauth2/auth",
     "token_uri": "https://accounts.google.com/o/oauth2/token"
   }
@@ -45,9 +45,9 @@ La récupération du code d’autorisation se fait via un navigateur \(le naviga
 
   * `response_type`: code
   * `client_id` : l’identifiant OAuth de l’application.
-  * `redirect_uri` : l’adresse de l’application vers laquelle renvoyer le code d’autorisation (préalablement enregistrée dans ses paramètres, par exemple  <https://localhost:5000/login/callback).>
+  * `redirect_uri` : l’adresse de l’application vers laquelle renvoyer le code d’autorisation (préalablement enregistrée dans ses paramètres, par exemple  <https://localhost:5000/login/callback>).
 
-La requête est automatiquement redirigée - [HTTP 302 Found](https://developer.mozilla.org/fr/docs/Web/HTTP/Status/302) vers le formulaire d'authentification intégré à Isogeo (https://id.api.isogeo.com/login) avec un paramètre de retour d'URL correspondant à la requête intiale. C'est l'étape à laquelle l'utilisateur final doit entrer son identifiant/mot de passe Isogeo :
+La requête est automatiquement redirigée - [HTTP 302 Found](https://developer.mozilla.org/fr/docs/Web/HTTP/Status/302) - vers le formulaire d'authentification intégré à Isogeo (https://id.api.isogeo.com/login) avec un paramètre de retour d'URL correspondant à la requête intiale. C'est l'étape à laquelle l'utilisateur final doit entrer son identifiant/mot de passe Isogeo :
 
 ![Formulaire d&apos;authentification Isogeo](/assets/api_id_auth_login_form.png)
 
@@ -73,7 +73,22 @@ En cas de succès le navigateur est redirigé vers l'URI de retour (*callback*) 
 http://localhost:5000/login/oauth/callback?code=%2B7CNjbPnhNbRgieXBS3YDKF%2BtmWLpSQWyQoQd%2Fy3yA6maBTV1cVTtNlyhG7gRvwIlQLlF15hv4dFb8kX%2FMlClU%2B%2FNTZuTRRDCWcop1p8ZF%2BR%2BQ8KbvKNkW%2FSNKWGz43H
 ```
 
-### Demande du jeton {#userapp_confidential_access}
+##### cURL
+
+Même si la ligne de commande n'est pas vraiment adaptée, voici la construction de l'URL :
+
+```powershell
+.\curl.exe --location <# suivre la redirection #> `
+           --get <# forcer le verbe GET #> `
+           --url 'https://id.api.isogeo.com/oauth/authorize' <# url cible #> `
+           --data 'response_type=code&http://localhost:5000/login/oauth/callback&client_id={client_id_value}' <# paramètres d'URL #> `
+           --verbose <# requête détaillée #> `
+           --include <# réponse détaillée #>
+```
+
+----
+
+### Demande du jeton d'accès {#userapp_confidential_access}
 
 Muni du code d’autorisation précédent, la récupération d’un *access token* se fait sur la route <https://id.api.isogeo.com/oauth/token.> Donc :
 
@@ -82,7 +97,7 @@ Muni du code d’autorisation précédent, la récupération d’un *access toke
   * un contenu qui contient les paramètres :
 
     * `grant_type` : *authorization_code*
-    * `code` : le code d’autorisation
+    * `code` : le code d’autorisation obtenu à l'étape précédente
     * `redirect_uri` : la même adresse que pour la requête d’autorisation.
 
   * [un en-tête d’authentification de type Basic](https://tools.ietf.org/html/rfc2617#section-2), où l’on considère que :
@@ -95,6 +110,35 @@ Muni du code d’autorisation précédent, la récupération d’un *access toke
     `Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW`
 
 L’*access_token* est renvoyé au format JSON. Il permet l’accès aux ressources d’Isogeo en lecture seule et est valide pendant 1 heure. Un refresh token est également fourni.
+
+### Exemples {#userapp_confidential_token_examples}
+
+#### Requête
+
+##### cUrl
+
+```powershell
+.\curl.exe --data 'grant_type=authorization_code&code={authorization_code}' <# on passe le type d'authentification et le code d'authorisation en paramètres d'URL #> `
+           -u '{client_id}:{client_secret}' <# la chaîne est automatiquement encodée en Base64 par cURL #> `
+           --url https://id.api.isogeo.com/oauth/token <# url cible #> `
+           -X POST <# superflu mais plus lisible #> `
+           --header 'content-type: application/x-www-form-urlencoded'  <# superflu mais plus lisible #> `
+           --verbose <# requête détaillée #> `
+           --include <# réponse détaillée #> `
+           -o access_token.json <# stocker la réponse dans un fichier JSON #>
+```
+
+#### Structure de l'access token renvoyé {#userapp_confidential_example_response}
+
+```json
+{
+  "access_token": "LoremipsumdolorsitametconsecteturadipiscingelitDonecmaurismaurisvariusacdictumvelviverrainvelitProinidvenenatisipsumutlaciniajustoFusceidexeratDuisutlectusinelitvehiculaconsequatvitaeacnullaDonecnibhnibhtristiqueatenimaliquamcursusultricesvelitQuisquepulvinarurnaveldictumefficiturvelitliberomollisduinecpulvinarliguladoloratquamSedtinciduntnequesitametvolutpat",
+  "token_type": "bearer",
+  "expires_in": 3599,
+  "refresh_token": "acnullaDonecnibhnibhtristiqueatenimaliquamcursusultricesvelitQuisquepulvinarurnaveldictumefficiturvelitliberomollisduinecpulvina"
+}
+
+```
 
 ### Le refresh token {#userapp_confidential_refresh}
 

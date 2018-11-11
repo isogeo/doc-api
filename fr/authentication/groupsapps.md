@@ -1,3 +1,8 @@
+---
+description: Isogeo API - Authentification applications de groupe,
+keywords: "api,oauth2,client credentials grant,isogeo,auhtentification"
+---
+
 # Applications de groupe
 
 ## Caractéristiques {#groupapp-properties}
@@ -76,7 +81,6 @@ En utilisant [cURL sur Windows](https://curl.haxx.se/windows/) (Powershell) :
 
 ##### Python
 
-
 Avec le package addditionnel `requests` :
 
 ```python
@@ -87,13 +91,13 @@ import requests
 payload = {"grant_type": "client_credentials"}
 
 # request
-rq_auth = requests.post(https://id.api.isogeo.com/oauth/token,
+rq_auth = requests.post("https://id.api.isogeo.com/oauth/token",
                         auth=(client_id, client_secret),
-                        headers=head,
                         data=payload)
 
 print(rq_auth.json())
 ```
+
 > Astuce : utiliser [le package officiel Isogeo Python SDK](https://pypi.org/project/isogeo-pysdk/) qui facilite grandement l'utilisation de l'API avec Python.
 
 #### Structure de l'access token renvoyé {#groupapp_auth_example_response}
