@@ -1,11 +1,8 @@
 {
- "language": "en",
- "links": {
-             "sidebar": {
-                         "Isogeo website": "http://www.isogeo.com/en"
-                         }
-             }
-
-
- 
- }
+    "language": "en",
+    "links": {
+        "sidebar": {
+            "Isogeo website": "https://www.isogeo.com/page/In-english-please"
+        }
+    }
+}

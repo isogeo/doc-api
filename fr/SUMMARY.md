@@ -10,8 +10,8 @@
 * [Concepts](authentication/concepts.md)
 * [Applications utilisateur](authentication/usersapps.md)
   * [URIs de redirection](authentication/usersapps/userappuris.md)
-  * [Applications "confidentielles"](authentication/usersapps/userappconfidential.md)
-  * [Applications "publiques"](authentication/usersapps/userapppublic.md)
+  * [Applications confidentielles](authentication/usersapps/userappconfidential.md)
+  * [Applications publiques](authentication/usersapps/userapppublic.md)
 * [Applications de groupe](authentication/groupsapps.md)
   * [Routes accessibles](authentication/groupsapps/groupsappsrights.md)
 

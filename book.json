@@ -1,6 +1,7 @@
 {
     "plugins": [
         "ga",
+        "html-minifier",
         "image-captions",
         "page-toc",
         "sitemap-general",
@@ -48,6 +49,7 @@
         }
     },
     "variables": {
+        "author": "Isogeo",
         "pictures": []
     }
 }
