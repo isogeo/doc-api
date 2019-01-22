@@ -18,6 +18,7 @@
 ## Routes
 
 * [Généralités](general.md)
+* [Utilisteur](account.md)
 * [Recherche](methods.md)
   * [Langue](methods/language.md)
   * [Tri](methods/ordering.md)
