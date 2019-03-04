@@ -2,7 +2,7 @@
 description: Documentation API REST Isogeo - Page d'accueil
 ---
 
-!["API Isogeo - Logo"](../assets/api_rest_isogeo_logo.jpg "API REST Isogeo - Logo")
+!["API Isogeo - Logo"](../assets/api_rest_isogeo_logo.jpg)
 
 # API REST d'Isogeo
 
@@ -10,7 +10,7 @@ description: Documentation API REST Isogeo - Page d'accueil
 
 La plateforme Isogeo est une suite logicielle dédiée à l'inventaire, l'indexation et à la valorisation des données géographiques. Afin de favoriser le développement des usages, elle met à disposition son API REST dont les caractéristiques techniques et les possibilités fonctionnelles sont décrites dans cette documentation.
 
-![](http://help.isogeo.com/fr/images/api_usages.png)
+!["API Isogeo - Usages"](/assets/api_usages.png)
 
 ## Principales caractéristiques
 
@@ -27,7 +27,7 @@ Certains applicatifs permettent de voir l’API en action :
 * la principale application de la plateforme, l'interface d'administration [APP](https://app.isogeo.com) ;
 * OpenCatalog, module applicatif d’Isogeo : un [exemple ici](https://open.isogeo.com/s/344d51c3edfb435daf9d98d948fa207e/Sbd1w7PgqE8n7LDq3azRqNhiMHZf0), intégré à [un portail en production là](https://www.ppige-npdc.fr/portail/geocatalogue) ;
 * le portail générique de données d'Isogeo, [ici en démonstration,](http://demo.isogeo.net) [là en production](http://geocatalogue.smavd.org/) ;
-* un portail territorial complet dans lequel l'API est intensivement utilisée : [geomayenne.fr](/: https://www.geomayenne.fr/portail/acces-aux-donnees/donnees/#catalogue) ;
+* un portail territorial complet dans lequel l'API est intensivement utilisée : [geomayenne.fr](https://www.geomayenne.fr/portail/acces-aux-donnees/donnees/#catalogue) ;
 * le plugin QGIS dont [le code source \(Python\) est ici](https://github.com/isogeo/isogeo-plugin-qgis) et [la documentation fonctionnelle là
   ](https://isogeo.gitbooks.io/app-plugin-qgis/content/fr/) ;
 * le widget Isogeo pour ArcGIS Web AppBuillder dont [une version de démonstration est visible ici](https://ags103-demo1.arxit.com/IsogeoForArcGIS/) ;
