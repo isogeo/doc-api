@@ -13,6 +13,11 @@
         "ga": {
             "token": "UA-22345848-2"
         },
+        "html-minifier": {
+            "decodeEntities": true,
+            "html5": true,
+            "removeEmptyElements": false
+        },
         "image-captions": {
             "variable_name": "pictures",
             "caption": "Fig. _BOOK_IMAGE_NUMBER_ : _CAPTION_",
