@@ -1,0 +1,1222 @@
+openapi: 3.0.0
+info:
+  title: Isogeo API v1
+  version: 2.19.1.15
+paths:
+  "/groups/{gid}/keywords/search":
+    get:
+      description: Searches for keywords in the specified group
+      parameters:
+        - description: The identifier of the group
+          in: path
+          name: gid
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - description: Indicates subresources that should be returned
+          in: query
+          name: _include
+          schema:
+            type: array
+            items:
+              enum:
+                - _abilities
+                - count
+              type: string
+            uniqueItems: true
+        - description: Limits the search to the specified thesauri
+          in: query
+          name: th
+          schema:
+            type: array
+            items:
+              format: uuid
+              type: string
+        - description: Limits the search to the specified identifiers
+          in: query
+          name: _id
+          schema:
+            type: array
+            items:
+              format: uuid
+              type: string
+        - description: Limits the search to the specified tags
+          in: query
+          name: _tag
+          schema:
+            type: array
+            items:
+              type: string
+        - description: Limits the number of results returned
+          in: query
+          name: _limit
+          schema:
+            type: integer
+            format: int32
+            default: 20
+        - description: Offset
+          in: query
+          name: _offset
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - description: Specifies the order of the results
+          in: query
+          name: ob
+          schema:
+            type: string
+            enum:
+              - count.group
+              - count.isogeo
+              - text
+            default: text
+        - description: Specifies the direction of the order
+          in: query
+          name: od
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: desc
+        - description: The search query
+          in: query
+          name: q
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                properties:
+                  limit:
+                    format: int32
+                    type: integer
+                  offset:
+                    format: int32
+                    type: integer
+                  results:
+                    items:
+                      $ref: "#/components/schemas/keyword"
+                    type: array
+                  total:
+                    format: int32
+                    type: integer
+                type: object
+      summary: Searches for keywords
+      tags:
+        - workgroup
+        - keyword
+  "/keywords/{kid}":
+    get:
+      description: Returns the specified keywords
+      parameters:
+        - description: The identifier of the keyword
+          in: path
+          name: kid
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - description: Indicates subresources that should be returned
+          in: query
+          name: _include
+          schema:
+            type: array
+            items:
+              enum:
+                - _abilities
+                - count
+                - thesaurus
+              type: string
+            uniqueItems: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/keyword"
+      summary: Returns a keyword
+      tags:
+        - keyword
+  /resources/search:
+    get:
+      description: Search resources
+      parameters:
+        - description: Indicates subresources that should be returned
+          in: query
+          name: _include
+          schema:
+            type: array
+            items:
+              enum:
+                - _abilities
+                - _creator
+                - conditions
+                - contacts
+                - coordinate-system
+                - events
+                - feature-attributes
+                - keywords
+                - layers
+                - limitations
+                - links
+                - operations
+                - specifications
+                - tags
+              type: string
+            uniqueItems: true
+        - description: Limits the search to the specified identifiers
+          in: query
+          name: _id
+          schema:
+            type: array
+            items:
+              format: uuid
+              type: string
+        - description: Limits the number of results returned
+          in: query
+          name: _limit
+          schema:
+            type: integer
+            format: int32
+            default: 20
+        - description: Offset
+          in: query
+          name: _offset
+          schema:
+            type: integer
+            format: int32
+        - description: Bounding box for the search
+          in: query
+          name: box
+          schema:
+            type: array
+            items:
+              format: double
+              type: number
+            minItems: 4
+            maxItems: 4
+        - description: Geographic criteria for the search, in WKT format
+          in: query
+          name: geo
+          schema:
+            type: string
+        - description: The spatial operator for the search
+          in: query
+          name: rel
+          schema:
+            type: string
+            enum:
+              - contains
+              - disjoint
+              - equals
+              - intersects
+              - overlaps
+              - within
+        - description: Specifies the order of the results
+          in: query
+          name: ob
+          schema:
+            type: string
+            enum:
+              - _created
+              - _modified
+              - title
+              - created
+              - modified
+            default: _created
+        - description: Specifies the direction of the order
+          in: query
+          name: od
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: desc
+        - description: The search query
+          in: query
+          name: q
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                properties:
+                  envelope:
+                    description: The aggregated convex hull for the entire search results.
+                      Might be null (if the results span the entire globe, for
+                      instance).
+                    type: object
+                  limit:
+                    format: int32
+                    type: integer
+                  offset:
+                    format: int32
+                    type: integer
+                  query:
+                    type: object
+                  results:
+                    items:
+                      $ref: "#/components/schemas/resource"
+                    type: array
+                  tags:
+                    $ref: "#/components/schemas/_tags"
+                  total:
+                    format: int32
+                    type: integer
+                type: object
+      security:
+        - groupApplication:
+            - read-only
+      summary: Search resources
+      tags:
+        - resource
+  "/resources/{id}":
+    get:
+      description: Returns a resource
+      parameters:
+        - description: The identifier of the resource
+          in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - description: Indicates subresources that should be returned
+          in: query
+          name: _include
+          schema:
+            type: array
+            items:
+              enum:
+                - _abilities
+                - _creator
+                - conditions
+                - contacts
+                - context
+                - coordinate-system
+                - events
+                - feature-attributes
+                - keywords
+                - layers
+                - limitations
+                - links
+                - operations
+                - specifications
+                - tags
+              type: string
+            uniqueItems: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/resource"
+      security:
+        - groupApplication:
+            - read-only
+      summary: Returns a resource
+      tags:
+        - resource
+  "/resources/{id}.xml":
+    get:
+      description: Returns a resource in ISO 19139 format
+      parameters:
+        - description: The identifier of the resource
+          in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - description: The URL of a proxy
+          in: query
+          name: proxyUrl
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+      security:
+        - groupApplication:
+            - read-only
+      summary: Returns a resource in ISO 19139 format
+      tags:
+        - resource
+  "/resources/{id}/contacts":
+    get:
+      description: Returns the contacts of a resource
+      parameters:
+        - description: The identifier of the resource
+          in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/resourceContact"
+                type: array
+      security:
+        - groupApplication:
+            - read-only
+      summary: Returns the contacts of a resource
+      tags:
+        - resource
+  "/resources/{rid}/events":
+    get:
+      description: Returns the events of a resource
+      parameters:
+        - description: The identifier of the resource
+          in: path
+          name: rid
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/resourceEvent"
+                type: array
+      security:
+        - groupApplication:
+            - read-only
+      summary: Returns the events of a resource
+      tags:
+        - resource
+  "/resources/{rid}/keywords":
+    get:
+      description: Returns the keywords of a resource
+      parameters:
+        - description: The identifier of the resource
+          in: path
+          name: rid
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - description: Indicates subresources that should be returned
+          in: query
+          name: _include
+          schema:
+            type: array
+            items:
+              enum:
+                - _abilities
+                - count
+              type: string
+            uniqueItems: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/keyword"
+                type: array
+      security:
+        - groupApplication:
+            - read-only
+      summary: Returns the keywords of a resource
+      tags:
+        - keyword
+        - resource
+  "/resources/{rid}/operations":
+    get:
+      description: Returns the operations of a service
+      parameters:
+        - description: The identifier of the service
+          in: path
+          name: rid
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/serviceOperation"
+                type: array
+      security:
+        - groupApplication:
+            - read-only
+      summary: Returns the operations of a service
+      tags:
+        - resource
+  /shares:
+    get:
+      description: Returns the list of shares accessible
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/share"
+                type: array
+      summary: Returns the shares
+      tags:
+        - shares
+  "/shares/{sid}":
+    get:
+      description: Returns a share
+      parameters:
+        - description: The identifier of the shares
+          in: path
+          name: sid
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/share"
+      summary: Returns a share
+      tags:
+        - share
+  /thesauri:
+    get:
+      description: Returns the list of thesauri
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/thesaurus"
+                type: array
+      summary: Returns the thesauri
+      tags:
+        - thesaurus
+  "/thesauri/{tid}":
+    get:
+      description: Returns a thesaurus
+      parameters:
+        - description: The identifier of the thesaurus
+          in: path
+          name: tid
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/thesaurus"
+      summary: Returns a thesaurus
+      tags:
+        - thesaurus
+  "/thesauri/{tid}/keywords/search":
+    get:
+      description: Searches for keywords in the specified thesaurus
+      parameters:
+        - description: The identifier of the thesaurus
+          in: path
+          name: tid
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - description: Indicates subresources that should be returned
+          in: query
+          name: _include
+          schema:
+            type: array
+            items:
+              enum:
+                - _abilities
+                - count
+                - thesaurus
+              type: string
+            uniqueItems: true
+        - description: Limits the search to the specified identifiers
+          in: query
+          name: _id
+          schema:
+            type: array
+            items:
+              format: uuid
+              type: string
+        - description: Limits the search to the specified tags
+          in: query
+          name: _tag
+          schema:
+            type: array
+            items:
+              type: string
+        - description: Limits the number of results returned
+          in: query
+          name: _limit
+          schema:
+            type: integer
+            format: int32
+            default: 20
+        - description: Offset
+          in: query
+          name: _offset
+          schema:
+            type: integer
+            format: int32
+            default: 0
+        - description: Specifies the order of the results
+          in: query
+          name: ob
+          schema:
+            type: string
+            enum:
+              - count.isogeo
+              - text
+            default: text
+        - description: Specifies the direction of the order
+          in: query
+          name: od
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: desc
+        - description: The search query
+          in: query
+          name: q
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                properties:
+                  limit:
+                    format: int32
+                    type: integer
+                  offset:
+                    format: int32
+                    type: integer
+                  results:
+                    items:
+                      $ref: "#/components/schemas/keyword"
+                    type: array
+                  total:
+                    format: int32
+                    type: integer
+                type: object
+      summary: Searches for keywords
+      tags:
+        - keyword
+        - thesaurus
+security:
+  - groupApplication:
+      - read-only
+servers:
+  - url: http://v1.api.isogeo.com
+  - url: https://v1.api.isogeo.com
+components:
+  securitySchemes:
+    groupApplication:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://id.api.qa.isogeo.com/oauth/token
+          scopes:
+            read-only: Read only access to the API
+  schemas:
+    _abilities:
+      items:
+        type: string
+      type: array
+      uniqueItems: true
+    _bbox:
+      items:
+        format: double
+        type: number
+      maxItems: 4
+      minItems: 4
+      type: array
+    _tags:
+      items:
+        type: object
+      type: array
+      uniqueItems: true
+    application:
+      properties:
+        _created:
+          format: date-time
+          type: string
+        _id:
+          format: uuid
+          type: string
+        _modified:
+          format: date-time
+          type: string
+        canHaveManyGroups:
+          type: boolean
+        client_id:
+          description: The OAuth 2.0 client identifier
+          type: string
+        client_secret:
+          description: The OAuth 2.0 client secret
+          type: string
+        groups:
+          items:
+            $ref: "#/components/schemas/workgroup"
+          type: array
+        kind:
+          enum:
+            - group
+            - user
+          type: string
+        name:
+          description: The name of the application
+          type: string
+        redirect_uris:
+          items:
+            type: string
+          type: array
+        scopes:
+          items:
+            type: string
+          type: array
+        staff:
+          type: boolean
+        url:
+          type: string
+      required:
+        - _id
+        - name
+      type: object
+    catalog:
+      properties:
+        $scan:
+          type: boolean
+        _abilities:
+          $ref: "#/components/schemas/_abilities"
+        _created:
+          format: date-time
+          type: string
+        _id:
+          format: uuid
+          type: string
+        _modified:
+          format: date-time
+          type: string
+        _tag:
+          type: string
+        code:
+          type: string
+        count:
+          format: int32
+          type: integer
+        name:
+          type: string
+        owner:
+          $ref: "#/components/schemas/workgroup"
+      type: object
+    contact:
+      properties:
+        _created:
+          format: date-time
+          type: string
+        _id:
+          format: uuid
+          type: string
+        _modified:
+          format: date-time
+          type: string
+        addressLine1:
+          type: string
+        addressLine2:
+          type: string
+        addressLine3:
+          type: string
+        available:
+          type: string
+        city:
+          type: string
+        countryCode:
+          type: string
+        email:
+          type: string
+        fax:
+          type: string
+        hash:
+          type: string
+        name:
+          type: string
+        organization:
+          type: string
+        phone:
+          type: string
+        type:
+          enum:
+            - custom
+            - group
+            - user
+          type: string
+        zipCode:
+          type: string
+      required:
+        - type
+      type: object
+    keyword:
+      properties:
+        _abilities:
+          $ref: "#/components/schemas/_abilities"
+        _created:
+          format: date-time
+          type: string
+        _id:
+          format: uuid
+          type: string
+        _modified:
+          format: date-time
+          type: string
+        _tag:
+          type: string
+        code:
+          type: string
+        count:
+          properties:
+            group:
+              format: int32
+              readOnly: true
+              type: integer
+            isogeo:
+              format: int32
+              readOnly: true
+              type: integer
+          type: object
+        description:
+          type: string
+        text:
+          type: string
+        thesaurus:
+          $ref: "#/components/schemas/thesaurus"
+      type: object
+    license:
+      properties:
+        _id:
+          format: uuid
+          type: string
+        content:
+          type: string
+        link:
+          type: string
+        name:
+          type: string
+      type: object
+    resource:
+      properties:
+        _abilities:
+          $ref: "#/components/schemas/_abilities"
+        _created:
+          format: date-time
+          type: string
+        _creator:
+          $ref: "#/components/schemas/workgroup"
+        _id:
+          format: uuid
+          type: string
+        _modified:
+          format: date-time
+          type: string
+        abstract:
+          type: string
+        bbox:
+          $ref: "#/components/schemas/_bbox"
+        collectionContext:
+          type: string
+        collectionMethod:
+          type: string
+        conditions:
+          items:
+            $ref: "#/components/schemas/resourceCondition"
+          type: array
+        contacts:
+          items:
+            $ref: "#/components/schemas/resourceContact"
+          type: array
+        context:
+          type: object
+        coordinate-system:
+          type: object
+        created:
+          format: date-time
+          type: string
+        distance:
+          format: double
+          type: number
+        editionProfile:
+          enum:
+            - csw
+            - daemon
+            - manual
+          readOnly: true
+          type: string
+        encoding:
+          type: string
+        envelope:
+          type: object
+        features:
+          format: int32
+          type: integer
+        format:
+          type: string
+        formatVersion:
+          type: string
+        geometry:
+          type: string
+        height:
+          format: int32
+          type: integer
+        keywords:
+          items:
+            $ref: "#/components/schemas/keyword"
+          type: array
+        language:
+          type: string
+        layers:
+          items:
+            $ref: "#/components/schemas/serviceLayer"
+          type: array
+        links:
+          items:
+            $ref: "#/components/schemas/resourceLink"
+          type: array
+        name:
+          type: string
+        operations:
+          items:
+            $ref: "#/components/schemas/serviceOperation"
+          type: array
+        path:
+          type: string
+        published:
+          format: date-time
+          type: string
+        scale:
+          format: int32
+          type: integer
+        series:
+          type: boolean
+        specifications:
+          items:
+            $ref: "#/components/schemas/resourceConformity"
+          type: array
+        tags:
+          $ref: "#/components/schemas/_tags"
+        title:
+          type: string
+        topologicalConsistency:
+          type: string
+        type:
+          enum:
+            - rasterDataset
+            - resource
+            - service
+            - vectorDataset
+          type: string
+        updateFrequency:
+          type: string
+        updated:
+          format: date-time
+          type: string
+        validFrom:
+          format: date-time
+          type: string
+        validTo:
+          format: date-time
+          type: string
+        validityComment:
+          type: string
+        width:
+          format: int32
+          type: integer
+      required:
+        - type
+      type: object
+    resourceCondition:
+      properties:
+        _id:
+          format: uuid
+          type: string
+        description:
+          type: string
+        license:
+          $ref: "#/components/schemas/license"
+      type: object
+    resourceConformity:
+      properties:
+        _id:
+          format: uuid
+          type: string
+        conformant:
+          type: boolean
+        license:
+          $ref: "#/components/schemas/specification"
+      type: object
+    resourceContact:
+      properties:
+        _id:
+          format: uuid
+          type: string
+        contact:
+          $ref: "#/components/schemas/contact"
+        role:
+          enum:
+            - author
+            - custodian
+            - distributor
+            - originator
+            - owner
+            - pointOfContact
+            - principalInvestigator
+            - processor
+            - publisher
+            - resourceProvider
+            - user
+          type: string
+      type: object
+    resourceEvent:
+      properties:
+        _id:
+          format: uuid
+          type: string
+        date:
+          format: date-time
+          type: string
+        description:
+          type: string
+        kind:
+          enum:
+            - creation
+            - publication
+            - update
+          type: string
+      required:
+        - kind
+        - date
+      type: object
+    resourceLink:
+      properties:
+        _id:
+          format: uuid
+          type: string
+        actions:
+          items:
+            enum:
+              - download
+              - other
+              - view
+            type: string
+          type: array
+        kind:
+          enum:
+            - data
+            - esriFeatureService
+            - esriMapService
+            - esriTileService
+            - url
+            - wfs
+            - wms
+            - wmts
+          type: string
+        link:
+          $ref: "#/components/schemas/resourceLink"
+        size:
+          format: int64
+          type: integer
+        title:
+          type: string
+        type:
+          enum:
+            - hosted
+            - link
+            - url
+          type: string
+        url:
+          type: string
+      type: object
+    serviceLayer:
+      properties:
+        _id:
+          format: uuid
+          type: string
+        id:
+          type: string
+        mimeTypes:
+          items:
+            type: string
+          type: array
+        titles:
+          items:
+            properties:
+              lang:
+                type: string
+              value:
+                type: string
+            type: object
+          type: array
+      required:
+        - id
+      type: object
+    serviceOperation:
+      properties:
+        _id:
+          format: uuid
+          type: string
+        mimeTypesIn:
+          items:
+            type: string
+          type: array
+        mimeTypesOut:
+          items:
+            type: string
+          type: array
+        name:
+          type: string
+        url:
+          type: string
+        verb:
+          enum:
+            - GET
+            - POST
+          type: string
+      required:
+        - name
+        - verb
+      type: object
+    share:
+      properties:
+        _created:
+          format: date-time
+          type: string
+        _creator:
+          $ref: "#/components/schemas/workgroup"
+        _id:
+          format: uuid
+          type: string
+        _modified:
+          format: date-time
+          type: string
+        applications:
+          items:
+            $ref: "#/components/schemas/application"
+          type: array
+        catalogs:
+          items:
+            $ref: "#/components/schemas/catalog"
+          type: array
+        groups:
+          items:
+            $ref: "#/components/schemas/workgroup"
+          type: array
+        name:
+          type: string
+        rights:
+          items:
+            type: string
+          type: array
+        type:
+          enum:
+            - application
+            - group
+          type: string
+      type: object
+    specification:
+      properties:
+        _id:
+          format: uuid
+          type: string
+        link:
+          type: string
+        name:
+          type: string
+        published:
+          format: date-time
+          type: string
+      type: object
+    thesaurus:
+      properties:
+        _abilities:
+          $ref: "#/components/schemas/_abilities"
+        _id:
+          format: uuid
+          type: string
+        code:
+          type: string
+        name:
+          type: string
+      type: object
+    workgroup:
+      properties:
+        _abilities:
+          $ref: "#/components/schemas/_abilities"
+        _created:
+          format: date-time
+          type: string
+        _id:
+          format: uuid
+          type: string
+        _modified:
+          format: date-time
+          type: string
+        areKeywordsRestricted:
+          type: boolean
+        canCreateMetadata:
+          type: boolean
+        code:
+          type: string
+        contact:
+          $ref: "#/components/schemas/contact"
+        keywordsCasing:
+          enum:
+            - capitalized
+            - lowercase
+            - mixedcase
+            - uppercase
+          type: string
+        metadataLanguage:
+          type: string
+        themeColor:
+          type: string
+      required:
+        - contact
+      type: object
