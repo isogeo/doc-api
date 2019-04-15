@@ -23,7 +23,6 @@
         "gitbook-plugin-image-captions": "^3.1.0",
         "gitbook-plugin-page-toc": "^1.1.0",
         "gitbook-plugin-sitemap-general": "^0.1.1",
-        "gitbook-plugin-swagger": "^0.2.0",
         "gitbook-plugin-timeline": "^1.0.13",
         "gitbook-plugin-toggle-headers": "^0.1.0",
         "gitbook-plugin-youtube": "^2.0.0"

@@ -2,7 +2,9 @@
     "language": "en",
     "links": {
         "sidebar": {
-            "Isogeo website": "https://www.isogeo.com/page/In-english-please"
+            "Isogeo website": "https://www.isogeo.com/page/In-english-please",
+            "Tech doc (Swagger)": "../tech/index.html"
+
         }
     }
 }

@@ -6,8 +6,7 @@
         "page-toc",
         "sitemap-general",
         "timeline",
-        "toggle-headers",
-        "swagger"
+        "toggle-headers"
     ],
     "pluginsConfig": {
         "ga": {
