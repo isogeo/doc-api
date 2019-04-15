@@ -51,4 +51,3 @@
 ## Annexes
 
 * [Glossaire](appendices/glossary.md)
-* [Swagger](../tech/index.html)

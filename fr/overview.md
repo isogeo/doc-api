@@ -45,4 +45,8 @@ Une description plus complète des proxies est disponible dans [une section déd
 
 ## Autres ressources
 
-À titre expérimental une [description de l’API au format Swagger est disponible ici](http://v1.api.isogeo.com/swagger.json). Il est possible d’en avoir un aperçu \(pour la version en cours de développement\) en [annexe de cette documentation](/appendices/swagger.md) ou bien via l'interface Swagger à l’adresse [http://chantiers.hq.isogeo.fr:1080/docs/Isogeo.Api/latest/Api.V1/](http://chantiers.hq.isogeo.fr:1080/docs/Isogeo.Api/latest/Api.V1/).
+Consulter la [documentation OpenAPI (Swagger)](../tech/html).
+
+----
+
+Date de la dernière mise à jour de cette documentation : **{{ gitbook.time | date("DD/MM/YYYY") }}**.

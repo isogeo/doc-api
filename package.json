@@ -1,5 +1,6 @@
 {
     "name": "isogeo-help-api",
+    "version": "2019.04",
     "private": false,
     "description": "Isogeo API REST - Documentation",
     "keywords": [
@@ -14,6 +15,15 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/isogeo/doc-api"
+    },
+    "scripts": {
+        "build": "gitbook build",
+        "dev": "gitbook serve"
+    },
+    "engines": {
+        "node": ">=8.11.1",
+        "gitbook": ">=3.2.2",
+        "yarn": ">= 1.0.0"
     },
     "dependencies": {
         "gitbook": "^3.2.3",
