@@ -27,5 +27,8 @@
         "gitbook-plugin-timeline": "^1.0.13",
         "gitbook-plugin-toggle-headers": "^0.1.0",
         "gitbook-plugin-youtube": "^2.0.0"
+    },
+    "devDependencies": {
+        "spectacle-docs": "^1.0.7"
     }
 }
