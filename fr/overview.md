@@ -45,7 +45,7 @@ Une description plus complète des proxies est disponible dans [une section déd
 
 ## Autres ressources
 
-Consulter la [documentation OpenAPI (Swagger)](../tech/html).
+Consulter la [documentation OpenAPI (Swagger)](../tech/index.html).
 
 ----
 
