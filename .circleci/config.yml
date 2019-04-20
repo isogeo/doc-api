@@ -54,7 +54,9 @@ jobs:
 
       - run:
           name: Install dependencies
-          command: yarn
+          command: |
+            npm rebuild node-sass --force
+            yarn
 
       - save_cache:
           name: Save yarn cache
