@@ -38,6 +38,7 @@
         "gitbook-plugin-youtube": "^2.0.0"
     },
     "devDependencies": {
+        "node-sass": "^4.11.0",
         "spectacle-docs": "^1.0.7"
     }
 }
