@@ -21,7 +21,7 @@
         "dev": "gitbook serve"
     },
     "engines": {
-        "node": ">=10.15",
+        "node": ">=8.11.1",
         "gitbook": ">=3.2.2",
         "yarn": ">= 1.0.0"
     },
