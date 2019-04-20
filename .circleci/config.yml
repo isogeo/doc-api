@@ -7,7 +7,7 @@ defaults:
   nodejs_container: &nodejs_container
     working_directory: *workspace_root
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:8-stretch
 
   golang_container: &golang_container
     working_directory: *workspace_root
@@ -54,9 +54,7 @@ jobs:
 
       - run:
           name: Install dependencies
-          command: |
-            npm rebuild node-sass --force
-            yarn
+          command: yarn
 
       - save_cache:
           name: Save yarn cache
