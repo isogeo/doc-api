@@ -86,13 +86,13 @@ jobs:
           name: Build API read-only doc using spectacle from swagger
           command: |
             curl -o swagger_read.json https://api.isogeo.com/swagger.json
-            yarn spectacle --one-file -t ./dist/api/tech swagger_read.json
+            yarn spectacle -t ./dist/api/tech swagger_read.json
 
       - run:
           name: Build API complete doc using spectacle from swagger
           command: |
             curl -o swagger_write.json https://api.isogeo.com/swagger-complete.json
-            yarn spectacle --one-file -t ./dist/api/complete swagger_write.json
+            yarn spectacle -t ./dist/api/complete swagger_write.json
 
       - persist_to_workspace:
           root: *workspace_root
