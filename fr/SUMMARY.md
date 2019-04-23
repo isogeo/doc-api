@@ -38,9 +38,12 @@
 
 * [Généralités](resources/general.md)
 * [Sous-ressources](resources/subresources.md)
-  * [Contacts](resources/subresources/contacts.md)
   * [Liens](resources/subresources/links.md)
   * [Systèmes de coordonnées](resources/subresources/srs.md)
+
+## Objets
+
+* [Contacts](entities/contacts.md)
 
 ## Proxy
 
