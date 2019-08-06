@@ -40,8 +40,9 @@
 * [Sous-ressources](entities/subresources.md)
 * [Contacts](entities/contact.md)
 * [Groupes](entities/group.md)
-* [Liens](entities/links.md)
-* [Systèmes de coordonnées](entities/srs.md)
+* [Liens](entities/link.md)
+* [Métadonnées](entities/metadata.md)
+* [Systèmes de coordonnées](entities/coordinate-system.md)
 
 ## Proxy
 
