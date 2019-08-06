@@ -34,16 +34,14 @@
   * [Métadonnée](download/metadata.md)
 * [Types de liens](links-kinds.md)
 
-## Ressources
+## Entités
 
-* [Généralités](resources/general.md)
-* [Sous-ressources](resources/subresources.md)
-  * [Liens](resources/subresources/links.md)
-  * [Systèmes de coordonnées](resources/subresources/srs.md)
-
-## Objets
-
-* [Contacts](entities/contacts.md)
+* [Généralités](entities/general.md)
+* [Sous-ressources](entities/subresources.md)
+* [Contacts](entities/contact.md)
+* [Groupes](entities/group.md)
+* [Liens](entities/links.md)
+* [Systèmes de coordonnées](entities/srs.md)
 
 ## Proxy
 
