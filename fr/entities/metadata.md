@@ -1,6 +1,6 @@
 # Métadonnées
 
-Les métadonnées sont les principales entités qui sont manipulées dans Isogeo. Une métadonnée appartient à un seul [groupe](/group.md).
+Les métadonnées sont les principales entités qui sont manipulées dans Isogeo. Une métadonnée appartient à un seul [groupe]{/group.md)}
 
 Une métadonnée contient :
 
@@ -10,7 +10,7 @@ Une métadonnée contient :
 
 ## Principales caratéristiques {#main_characteristics}
 
-### Type de source décrite (#types)
+### Type de source décrite {#types}
 
 {% include "./enums/metadata_types.md" %}
 
