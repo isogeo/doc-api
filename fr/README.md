@@ -35,3 +35,7 @@ Certains applicatifs permettent de voir l’API en action :
 ## Newsletter
 
 Une lettre d’information \(sans spam ni marketing ajoutés\), orientée développeurs, est mise à disposition pour suivre les évolutions, nouvelles ressources ou problèmes de l’API : [s’inscrire](http://eepurl.com/bfJYu9).
+
+----
+
+Date de la dernière mise à jour de cette documentation : **{{ gitbook.time | date("DD/MM/YYYY") }}**.
