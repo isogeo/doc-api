@@ -3,7 +3,7 @@
     "links": {
         "sidebar": {
             "Isogeo website": "https://www.isogeo.com/page/In-english-please",
-            "Tech doc (Swagger)": "../tech/index.html"
+            "Tech doc (Swagger)": "../swaggerui/"
 
         }
     }

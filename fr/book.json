@@ -4,7 +4,7 @@
     "links": {
         "sidebar": {
             "Site Isogeo": "https://www.isogeo.com",
-            "Documentation automatique (Swagger)": "../tech/index.html",
+            "Documentation automatique (Swagger)": "../swaggerui/",
             "Autres documentations Isogeo": "http://help.isogeo.com"
         }
     },

@@ -1,0 +1,154 @@
+# Global variables
+variables:
+  project_name: "Documentation - Isogeo API"
+  project_name_clean: "api"
+  yarn_cache_folder: $(Pipeline.Workspace)/.yarn/cache
+
+trigger:
+  batch: true
+  branches:
+    include:
+    - master
+  tags:
+    include:
+    - "*"
+
+pr:
+- master
+
+jobs:
+- job: 'Build'
+  displayName: "Build the documentation website"
+  pool:
+    vmImage: "ubuntu-latest"
+  
+  steps:
+  - task: NodeTool@0 
+    inputs:
+      versionSpec: '10.15.x'
+    displayName: 'Install Node.js 10.15.x'
+ 
+  # - task: CacheBeta@0
+  #   continueOnError: true
+  #   inputs:
+  #     key: "isogeo-help-yarn-$(Agent.OS)"
+  #     path: $(yarn_cache_folder)
+  #   displayName: 'Cache Yarn packages'
+
+  - script: yarn global add gitbook
+    displayName: 'Install Gitbook'
+
+  - script: yarn install --frozen-lockfile --ignore-engines
+    displayName: 'Install dependencies'
+
+  - script: yarn gitbook install
+    displayName: 'Install Gitbook dependencies'
+
+  - script: yarn gitbook build ./ dist/
+    displayName: 'Build Gitbook HTML output'
+
+  - task: DeleteFiles@1
+    displayName: 'Remove files to be ignored in publication'
+    inputs:
+      SourceFolder: '$(System.DefaultWorkingDirectory)/dist'
+      Contents: |
+        .gitignore
+        .vscode*
+        azure-pipelines.yml
+        package.json
+        yarn.lock
+
+  - powershell: |
+      Invoke-WebRequest -Uri https://api.isogeo.com/swagger.json -OutFile 'swaggerui/swagger.json'
+      Invoke-WebRequest -Uri https://api.isogeo.com/swagger-complete.json -OutFile 'swaggerui/swagger-complete.json'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/dist'
+    displayName: 'Download swagger definitions then add them to the artifact'
+
+  - task: PublishPipelineArtifact@1
+    displayName: 'Publish Artifact: $(project_name)'
+    inputs:
+      path: $(System.DefaultWorkingDirectory)/dist
+      artifact: '$(project_name)_$(Build.SourceBranchName)_$(Build.BuildId)'
+
+# PUBLISH TO QA
+- job: 'PublishQA'
+  displayName: "Publish to QA"
+  dependsOn: 'Build'
+  pool:
+    vmImage: "windows-2019"
+
+  steps:
+
+  # no need for source code
+  - checkout: none
+
+  - task: DownloadPipelineArtifact@2
+    inputs:
+      buildType: 'current'
+      artifactName: '$(project_name)_$(Build.SourceBranchName)_$(Build.BuildId)'
+      targetPath: '$(System.DefaultWorkingDirectory)/book_to_upload'
+
+  - powershell: |
+      Rename-Item -Path "robots_qa.txt" -NewName "robots.txt"
+      Remove-Item -Path "robots_prod.txt"
+    workingDirectory: '$(System.DefaultWorkingDirectory)/book_to_upload'
+    displayName: 'Rename robots.txt file for QA'
+
+  - task: AzureFileCopy@3
+    displayName: 'Copy files to Azure Storage Blob: qaisogeohelp/$web/$(project_name_clean)'
+    inputs:
+      SourcePath: '$(System.DefaultWorkingDirectory)/book_to_upload'
+      azureSubscription: 'Isogeo - MPN(82885610-5841-4749-8d71-46f56b643ad2)'
+      Destination: 'AzureBlob'
+      storage: 'qaisogeohelp'
+      ContainerName: '$web'
+      BlobPrefix: '$(project_name_clean)'
+
+# PUBLISH
+# only with a tagged commit (see: https://github.com/MicrosoftDocs/vsts-docs/issues/3281)
+- job: 'PublishPROD'
+  displayName: "Publish to PROD"
+  dependsOn: 'Build'
+  pool:
+    vmImage: "windows-2019"
+  condition:
+    contains(variables['Build.SourceBranch'], 'tags')
+
+  steps:
+
+  # no need for source code
+  - checkout: none
+
+  - task: DownloadPipelineArtifact@2
+    inputs:
+      buildType: 'current'
+      artifactName: '$(project_name)_$(Build.SourceBranchName)_$(Build.BuildId)'
+      targetPath: '$(System.DefaultWorkingDirectory)/book_to_upload'
+
+  - powershell: |
+      Rename-Item -Path "robots_prod.txt" -NewName "robots.txt"
+      Remove-Item -Path "robots_qa.txt"
+    workingDirectory: '$(System.DefaultWorkingDirectory)/book_to_upload'
+    displayName: 'Rename robots.txt file for PROD'
+
+  - task: GitHubRelease@1
+    displayName: 'Publish release on Github'
+    inputs:
+      gitHubConnection: 'github_isogeo'
+      repositoryName: '$(Build.Repository.Name)'
+      action: 'create'
+      target: '$(Build.SourceVersion)'
+      tagSource: 'gitTag'
+      assets: '$(Build.ArtifactStagingDirectory)/book_to_upload/*'
+      changeLogCompareToRelease: 'lastFullRelease'
+      changeLogType: 'issueBased'
+
+  - task: AzureFileCopy@3
+    displayName: 'Copy files to Azure Storage Blob: prodisogeohelp/$web/$(project_name_clean)'
+    inputs:
+      SourcePath: '$(System.DefaultWorkingDirectory)/book_to_upload'
+      azureSubscription: 'Isogeo - MPN(82885610-5841-4749-8d71-46f56b643ad2)'
+      Destination: 'AzureBlob'
+      storage: 'prodisogeohelp'
+      ContainerName: '$web'
+      BlobPrefix: '$(project_name_clean)'
