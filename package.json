@@ -1,6 +1,6 @@
 {
     "name": "isogeo-help-api",
-    "version": "2019.04",
+    "version": "2019.09",
     "private": false,
     "description": "Isogeo API REST - Documentation",
     "keywords": [
@@ -21,7 +21,7 @@
         "dev": "gitbook serve"
     },
     "engines": {
-        "node": ">=8.11.1",
+        "node": ">=10.15.0",
         "gitbook": ">=3.2.2",
         "yarn": ">= 1.0.0"
     },
@@ -36,9 +36,5 @@
         "gitbook-plugin-timeline": "^1.0.13",
         "gitbook-plugin-toggle-headers": "^0.1.0",
         "gitbook-plugin-youtube": "^2.0.0"
-    },
-    "devDependencies": {
-        "node-sass": "^4.11.0",
-        "spectacle-docs": "^1.0.7"
     }
 }
