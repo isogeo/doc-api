@@ -58,6 +58,11 @@ jobs:
         package.json
         yarn.lock
 
+  - task: PowerShell@2
+    inputs:
+      targetType: 'inline'
+      script: "Invoke-WebRequest -Uri https://api.isogeo.com/swagger.json -OutFile '$(System.DefaultWorkingDirectory)/dist/swagger.json'"
+
   - task: PublishPipelineArtifact@1
     displayName: 'Publish Artifact: $(project_name)'
     inputs:
