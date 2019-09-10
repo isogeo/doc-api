@@ -62,7 +62,7 @@ jobs:
     displayName: 'Create the Swagger-UI folder'
     inputs:
       targetType: 'inline'
-      script: "New-Item -Name "$(System.DefaultWorkingDirectory)/dist/swaggerui" -ItemType "directory" -Force"
+      script: "New-Item -Name '$(System.DefaultWorkingDirectory)/dist/swaggerui' -ItemType 'directory' -Force"
 
   - task: PowerShell@2
     displayName: 'Download Swagger definition for read-only API'
