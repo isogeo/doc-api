@@ -58,23 +58,12 @@ jobs:
         package.json
         yarn.lock
 
-  - task: PowerShell@2
-    displayName: 'Create the Swagger-UI folder'
-    inputs:
-      targetType: 'inline'
-      script: "New-Item -Name '$(System.DefaultWorkingDirectory)/dist/swaggerui' -ItemType 'directory' -Force"
-
-  - task: PowerShell@2
-    displayName: 'Download Swagger definition for read-only API'
-    inputs:
-      targetType: 'inline'
-      script: "Invoke-WebRequest -Uri https://api.isogeo.com/swagger.json -OutFile '$(System.DefaultWorkingDirectory)/dist/swaggerui/swagger.json'"
-
-  - task: PowerShell@2
-    displayName: 'Download Swagger definition for read and write API'
-    inputs:
-      targetType: 'inline'
-      script: "Invoke-WebRequest -Uri https://api.isogeo.com/swagger-complete.json -OutFile '$(System.DefaultWorkingDirectory)/dist/swaggerui/swagger-complete.json'"
+  - powershell: |
+      New-Item -Name 'swaggerui' -ItemType 'directory' -Force
+      Invoke-WebRequest -Uri https://api.isogeo.com/swagger.json -OutFile 'swaggerui/swagger.json'
+      Invoke-WebRequest -Uri https://api.isogeo.com/swagger-complete.json -OutFile 'swaggerui/swagger-complete.json'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/dist'
+    displayName: 'Download swagger definitions then add them to the artifact'
 
   - task: PublishPipelineArtifact@1
     displayName: 'Publish Artifact: $(project_name)'
