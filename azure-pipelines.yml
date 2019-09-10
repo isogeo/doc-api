@@ -59,7 +59,6 @@ jobs:
         yarn.lock
 
   - powershell: |
-
       Invoke-WebRequest -Uri https://api.isogeo.com/swagger.json -OutFile 'swaggerui/swagger.json'
       Invoke-WebRequest -Uri https://api.isogeo.com/swagger-complete.json -OutFile 'swaggerui/swagger-complete.json'
     workingDirectory: '$(System.DefaultWorkingDirectory)/dist'
