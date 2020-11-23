@@ -6,4 +6,4 @@
 | service        | Service géographique                      |
 | resource       | Ressource non géographique                |
 
-Les différents types sont expliqués dans [le guide administrateur](http://help.isogeo.com/admin/fr/features/documentation/#les-diff%C3%A9rents-types-de-ressources).
+Les différents types sont expliqués dans [le guide administrateur](https://help.isogeo.com/admin/fr/features/documentation/#les-diff%C3%A9rents-types-de-ressources).

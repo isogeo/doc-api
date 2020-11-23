@@ -8,7 +8,7 @@
 
 _ob_ signifie _OrderBy_ et permet de trier les résultats de la recherche selon plusieurs critères.
 
-Par défaut, les résultats de recherche sont triés par score de pertinence \([voir ici pour le mode de calcul](http://help.isogeo.com/fr/features/inventory/search.html#pertinence-)\) selon les [termes libres passés au paramètre _q_](/methods/terms.md).
+Par défaut, les résultats de recherche sont triés par score de pertinence \([voir ici pour le mode de calcul](https://help.isogeo.com/fr/features/inventory/search.html#pertinence-)\) selon les [termes libres passés au paramètre _q_](/methods/terms.md).
 
 Si aucun terme n'est envoyé, le score de pertinence est donc le même pour tous les résultats et c'est alors la date de création de la métadonnée qui sert de valeur par défaut.
 
@@ -29,7 +29,7 @@ Le tableau ci-dessous indique les valeurs acceptées pour le paramètre _ob_.
 
 #### Métadonnée ou donnée : _underscore rules!_
 
-Il y a un fort risque de confusion entre les dates concernant la métadonnée et celles concernant la donnée \(ou le service ou la ressource\) décrite par sa métadonnée. Être attentif à l'underscore dans le tableau des valeurs possibles ci-dessous. Pour une information plus complète, consulter [l'annexe sur les différentes dates dans Isogeo](http://help.isogeo.com/fr/appendices/different_dates.html).
+Il y a un fort risque de confusion entre les dates concernant la métadonnée et celles concernant la donnée \(ou le service ou la ressource\) décrite par sa métadonnée. Être attentif à l'underscore dans le tableau des valeurs possibles ci-dessous. Pour une information plus complète, consulter [l'annexe sur les différentes dates dans Isogeo](https://help.isogeo.com/fr/appendices/different_dates.html).
 
 #### Tri inopérant
 

@@ -9,7 +9,7 @@ Par défaut les routes de l’API concernent toutes les entités qui sont access
 * les entités accessibles à l’utilisateur dans le cas d’une [application utilisateur](/authentication/usersapps.md).
 * les entités partagées à l’application dans le cas d’une [application de groupe](/authentication/groupsapps.md).
 
-Les applications tierces d'Isogeo accèdent aux catalogues de métadonnées que les administrateurs choisissent de leur partager via le menu "Partages" de l'interface d'administration ([voir documentation fonctionnelle](http://help.isogeo.com/fr/features/admin/shares.html)).
+Les applications tierces d'Isogeo accèdent aux catalogues de métadonnées que les administrateurs choisissent de leur partager via le menu "Partages" de l'interface d'administration ([voir documentation fonctionnelle](https://help.isogeo.com/fr/features/admin/shares.html)).
 
 C'est lié au fait que :
 

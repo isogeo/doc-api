@@ -27,7 +27,7 @@
             }
         },
         "sitemap-general": {
-            "prefix": "http://help.isogeo.com/api/"
+            "prefix": "https://help.isogeo.com/api/"
         },
         "theme-api": {
             "split": true,
