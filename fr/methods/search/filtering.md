@@ -100,13 +100,17 @@ Caractéristiques :
 
 Une métadonnée peut contenir 0 - n mots-clés définis par l'utilisateur lors de l'étiquetage (édition).
 
-> Structure : q=**keyword:isogeo:{KEYWORD_CODE_VALUE}**
+> Structure : q=**keyword:{THESAURUS_NAME}:{KEYWORD_CODE_VALUE}**
 
 Caractéristiques :
 
 * champ optionnel
 * les keywords sont visibles dans la sous-ressource _keywords_
 * plusieurs valeurs possibles
+* noms des trois thésaurus existants :
+  * inspire-theme : thésaurus des thématiques Inspire,
+  * group-theme : thésaurus des thématiques.
+  * isogeo : thésaurus des mots-clés
 
 ### Exemples {#keyword_example}
 
