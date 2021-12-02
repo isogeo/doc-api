@@ -121,6 +121,20 @@ Caractéristiques :
 
 ---
 
+## Nom de la donnée {#name}
+
+Une métadonnée est constituée obligatoirement d'un titre, et parfois du nom de la donnée.
+
+> Structure : q=**name:{nom_de_la_donnée}**
+
+---
+
+## Emplacement de la donnée {#path}
+
+> Structure : q=**path:{emplacement_de_la_donnée}**
+
+---
+
 ## Système de coordonnées source {#srs}
 
 Une métadonnée peut contenir le système de coordonnées source du jeu de données décrit. Ce système de coordonnées peut être renseigné par le Scan FME ou manuellement.
@@ -151,7 +165,7 @@ Dans Isogeo, chaque métadonnée indique le type de ressource qu'elle décrit. D
 
 Caractéristiques :
 
-* valeur obigatoire
+* valeur obligatoire
 * à la racine du modèle
 * 1 seule occurence possible
 
