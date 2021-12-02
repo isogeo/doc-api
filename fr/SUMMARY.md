@@ -41,6 +41,7 @@
 * [Groupes](entities/group.md)
 * [Liens](entities/link.md)
 * [Métadonnées](entities/metadata.md)
+* [Mots-clés](entities/keyword.md)
 * [Systèmes de coordonnées](entities/coordinate-system.md)
 
 ## Proxy
