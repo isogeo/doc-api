@@ -13,7 +13,7 @@ La plateforme Isogeo distingue 2 types d’applications :
 * les [applications de groupe](/authentication/groupsapps.md) :
   * elles accèdent aux ressources de la plateforme en leur propre nom, sans notion d’utilisateur.
   * elles accèdent uniquement aux ressources qui leur ont été partagées par l'administrateur d'un ou plusieurs groupes de travail, via l'application Isogeo APP.
-  * exemples d'application : [OpenCatalog](https://open.isogeo.com), les plugins pour SIG, Isogeo to Office
+  * exemples d'application : [OpenCatalog](https://open.isogeo.com/s/8d491301f61249139918e3710cd39eb7/wak8OBU2hQX6F6rtIe3fWiRCvzFH0), les plugins pour SIG, Isogeo to Office
 
 Toute application, développée par Isogeo ou un tiers, s'authentifie à la plateforme Isogeo via  [le protocole OAuth 2.0](https://tools.ietf.org/html/rfc6749). La documentation officielle de OAuth 2.0 fait donc référence pour l’authentification Isogeo.
 

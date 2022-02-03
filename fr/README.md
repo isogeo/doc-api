@@ -25,12 +25,12 @@ La plateforme Isogeo est une suite logicielle dédiée à l'inventaire, l'indexa
 Certains applicatifs permettent de voir l’API en action :
 
 * la principale application de la plateforme, l'interface d'administration [APP](https://app.isogeo.com) ;
-* OpenCatalog, module applicatif d’Isogeo : un [exemple ici](https://open.isogeo.com/s/344d51c3edfb435daf9d98d948fa207e/Sbd1w7PgqE8n7LDq3azRqNhiMHZf0), intégré à [un portail en production là](https://www.ppige-npdc.fr/portail/geocatalogue) ;
-* le portail générique de données d'Isogeo, [ici en démonstration,](http://demo.isogeo.net) [là en production](http://geocatalogue.smavd.org/) ;
-* un portail territorial complet dans lequel l'API est intensivement utilisée : [geomayenne.fr](https://www.geomayenne.fr/portail/acces-aux-donnees/donnees/#catalogue) ;
+* OpenCatalog, module applicatif d’Isogeo : un [exemple ici](https://open.isogeo.com/s/8d491301f61249139918e3710cd39eb7/wak8OBU2hQX6F6rtIe3fWiRCvzFH0/r/10383c7f97ba470fbbffdd46d3e99308?), intégré à [un portail en production là](https://sig.normandie.fr/catalogue-de-donnees) ;
+* le portail générique de données d'Isogeo, [ici en démonstration,](https://demo.isogeo.net) [là en production](https://geocatalogue.smavd.org/) ;
+* un portail territorial complet dans lequel l'API est intensivement utilisée : [geocatalogue.smavd.org](https://geocatalogue.smavd.org/) ;
 * le plugin QGIS dont [le code source \(Python\) est ici](https://github.com/isogeo/isogeo-plugin-qgis) et [la documentation fonctionnelle là
   ](https://isogeo.gitbooks.io/app-plugin-qgis/content/fr/) ;
-* le widget Isogeo pour ArcGIS Web AppBuillder dont [une version de démonstration est visible ici](https://ags103-demo1.arxit.com/IsogeoForArcGIS/) ;
+* le widget Isogeo pour ArcGIS Web AppBuillder dont [une version de démonstration est visible ici](https://carto.isogeo.net/portal/apps/webappviewer/index.html?id=3d98d958f6e3481aa61b5da83e0bff0b) ;
 
 ## Newsletter
 
